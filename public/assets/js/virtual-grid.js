@@ -10,8 +10,9 @@ export class VirtualGrid {
     renderItem,
     itemMinWidth = 200,
     itemHeight = 240,
-    gap = 12,
-    overscanRows = 2
+  gap = 12,
+  overscanRows = 2,
+  square = false
   }) {
     this.container = container;
     this.scrollParent = scrollParent;
@@ -20,7 +21,7 @@ export class VirtualGrid {
     this.itemHeight = itemHeight;
     this.gap = gap;
     this.overscanRows = overscanRows;
-    this.items = [];
+  this.items = [];
     this.columns = 1;
     this.totalRows = 0;
     this.firstRow = 0;
@@ -28,7 +29,8 @@ export class VirtualGrid {
     this.renderedRange = { start: 0, end: -1 };
     this.nodePool = new Map(); // id -> element
     this.recycled = [];
-    this._resizeObserver = new ResizeObserver(() => this.refreshLayout());
+  this.square = square;
+  this._resizeObserver = new ResizeObserver(() => this.refreshLayout());
     this._resizeObserver.observe(this.scrollParent);
     this.handleScroll = this.handleScroll.bind(this);
     this.scrollParent.addEventListener('scroll', this.handleScroll, { passive: true });
@@ -45,6 +47,9 @@ export class VirtualGrid {
     const columns = Math.max(1, Math.floor((width + this.gap) / (this.itemMinWidth + this.gap)));
     this.columns = columns;
     this.cardWidth = Math.floor((width - (this.gap * (columns - 1))) / columns);
+    if (this.square) {
+      this.itemHeight = this.cardWidth; // force square
+    }
     this.totalRows = Math.ceil(this.items.length / columns);
     const totalHeight = this.totalRows * (this.itemHeight + this.gap) - this.gap;
     this.container.style.height = totalHeight + 'px';

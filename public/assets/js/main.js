@@ -32,6 +32,7 @@ const el = {
   settingsForm: document.getElementById('settingsForm'),
   libraryRootInput: document.getElementById('libraryRootInput'),
   settingsMessage: document.getElementById('settingsMessage'),
+  quickFilters: document.getElementById('quickFilters'),
 };
 
 // Grid
@@ -39,10 +40,11 @@ const grid = new VirtualGrid({
   container: el.grid,
   scrollParent: document.getElementById('gridContainer'),
   renderItem: asset => createAssetCard(asset),
-  itemMinWidth: 200,
-  itemHeight: 240,
-  gap: 12,
-  overscanRows: 2
+  itemMinWidth: 320,
+  itemHeight: 320,
+  gap: 24,
+  overscanRows: 2,
+  square: true
 });
 
 // Init
@@ -85,6 +87,12 @@ function wireEvents() {
   el.semanticToggle.addEventListener('change', () => { State.filters.semantic = el.semanticToggle.checked; applyFilters(); });
   el.closeDetail.addEventListener('click', () => closeDetail());
   el.sidebarToggle?.addEventListener('click', () => { el.sidebar.classList.toggle('open'); });
+  // Close sidebar on outside click (mobile)
+  document.addEventListener('click', e => {
+    if (window.innerWidth < 900 && el.sidebar.classList.contains('open')) {
+      if (!el.sidebar.contains(e.target) && e.target !== el.sidebarToggle) el.sidebar.classList.remove('open');
+    }
+  });
   window.addEventListener('hashchange', () => routeFromHash());
   window.addEventListener('resize', debounce(()=> grid.refreshLayout(), 150));
   el.openSettings?.addEventListener('click', () => openSettings());
@@ -129,10 +137,15 @@ async function loadIndexRoot() {
     State.items = root.items || [];
     State.indexLoaded = true;
     buildFacetSets();
+    buildQuickFilters();
     renderFacetFilters();
     applyFilters();
     const dur = (performance.now() - start).toFixed(1);
-    el.statusBar.textContent = `Loaded ${State.items.length.toLocaleString()} items in ${dur}ms`;
+    const rootInfo = root.sourceRoot ? ` | Src: ${truncatePath(root.sourceRoot)}` : '';
+    el.statusBar.textContent = `Loaded ${State.items.length.toLocaleString()} items in ${dur}ms${rootInfo}`;
+    if (!State.items.length) {
+      el.statusBar.textContent += ' (No assets found - run build_index_from_library script)';
+    }
   } catch (err) {
     console.error(err);
     el.statusBar.textContent = 'Failed to load index';
@@ -146,6 +159,27 @@ function buildFacetSets() {
     if (it.category) State.categories.add(it.category);
     if (it.type) State.types.add(it.type);
   }
+}
+
+function buildQuickFilters() {
+  if (!el.quickFilters) return;
+  const chips = [
+    { id:'all', label:'All', action: () => { State.filters.categories.clear(); State.filters.types.clear(); applyFilters(); highlightChip('all'); } },
+    { id:'assets', label:'Assets', action: () => { State.filters.types = new Set(['asset']); applyFilters(); highlightChip('assets'); } },
+    { id:'materials', label:'Materials', action: () => { State.filters.types = new Set(['material']); applyFilters(); highlightChip('materials'); } },
+    { id:'textures', label:'Textures', action: () => { State.filters.types = new Set(['texture']); applyFilters(); highlightChip('textures'); } },
+    { id:'recent', label:'Recent', action: () => { State.filters.sort = 'updated'; el.sortSelect.value='updated'; applyFilters(); highlightChip('recent'); } }
+  ];
+  el.quickFilters.innerHTML = chips.map(c => `<button type="button" data-chip="${c.id}" class="qf-chip" id="qf-${c.id}">${c.label}</button>`).join('');
+  chips.forEach(c => {
+    const btn = document.getElementById('qf-'+c.id);
+    btn.addEventListener('click', c.action);
+  });
+  highlightChip('all');
+}
+
+function highlightChip(id) {
+  el.quickFilters.querySelectorAll('.qf-chip').forEach(ch => ch.classList.toggle('active', ch.dataset.chip===id));
 }
 
 function renderFacetFilters() {
@@ -204,12 +238,8 @@ function createAssetCard(asset) {
   div.setAttribute('type','button');
   div.dataset.id = asset.id || asset.shortId;
   div.innerHTML = `
-    <div class="asset-thumb-wrapper ${asset.thumb ? '' : 'skeleton'}">
+    <div class="asset-thumb-wrapper ${asset.thumb ? '' : 'skeleton'}" title="${asset.displayName}">
       ${asset.thumb ? `<img loading="lazy" decoding="async" src="${asset.thumb}" alt="${asset.displayName}">` : ''}
-    </div>
-    <div class="asset-meta">
-      <div class="asset-name" title="${asset.displayName}">${asset.displayName}</div>
-      <div class="asset-tags">${renderTagPills(asset)}</div>
     </div>`;
   div.addEventListener('click', () => openDetail(asset));
   return div;
@@ -257,3 +287,5 @@ function routeFromHash() { /* reserved for future deep-linking */ }
 if ('serviceWorker' in navigator) {
   // navigator.serviceWorker.register('sw.js'); // add once sw exists
 }
+
+function truncatePath(p){ return p && p.length>40 ? '…'+p.slice(-38) : p; }

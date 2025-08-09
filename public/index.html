@@ -5,60 +5,102 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Luxeimo Library Viewer</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <script>
+    // Tailwind CDN with custom config
+    window.tailwindConfig = {
+      theme: {
+        extend: {
+          colors: {
+            accent: '#4aa3ff',
+            surface: {
+              50:'#f5f7fa',100:'#e9edf2',200:'#d4dbe4',300:'#b1c1d1',400:'#7d97b1',500:'#56728d',600:'#455a71',700:'#39495d',800:'#2f3b4b',900:'#293240',950:'#121821'
+            }
+          },
+          boxShadow: {
+            'soft':'0 4px 12px -2px rgba(0,0,0,.4)',
+            'glow':'0 0 0 1px rgba(74,163,255,.4),0 4px 18px -4px rgba(74,163,255,.4)'
+          }
+        }
+      },
+      darkMode: 'class'
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="assets/css/main.css" />
 </head>
-<body>
-  <div id="app" class="app-shell d-flex">
-    <aside id="sidebar" class="app-sidebar border-end">
-      <div class="p-3 sidebar-header d-flex align-items-center justify-content-between gap-2">
-        <h1 class="h5 mb-0">Luxeimo</h1>
-        <div class="btn-group btn-group-sm">
-          <button id="openSettings" class="btn btn-outline-secondary" title="Settings">⚙️</button>
-          <button id="toggleTheme" class="btn btn-outline-secondary" title="Toggle Theme">🌓</button>
+<body class="min-h-screen antialiased bg-gradient-to-br from-surface-900 via-surface-800 to-surface-900 text-slate-100 dark:text-slate-100">
+  <div id="app" class="flex h-screen w-full overflow-hidden">
+    <!-- Sidebar -->
+  <aside id="sidebar" class="app-sidebar flex flex-col w-72 bg-surface-800/60 backdrop-blur-xl border-r border-surface-700/60 mobile-collapsible">
+      <div class="p-4 flex items-center justify-between gap-2 border-b border-surface-700/60">
+        <div class="flex items-center gap-2">
+          <div class="h-9 w-9 rounded-lg bg-gradient-to-br from-accent/40 to-accent/10 flex items-center justify-center shadow-glow">
+            <span class="font-bold text-accent text-lg">Lx</span>
+          </div>
+          <h1 class="text-sm font-semibold tracking-wide uppercase">Luxeimo</h1>
+        </div>
+        <div class="flex gap-2">
+          <button id="openSettings" class="btn btn-sm btn-outline-secondary !px-2" title="Settings">⚙️</button>
+          <button id="toggleTheme" class="btn btn-sm btn-outline-secondary !px-2" title="Toggle Theme">🌓</button>
         </div>
       </div>
-      <div class="p-3">
-        <div class="mb-3">
-          <label class="form-label small text-uppercase fw-semibold">Search</label>
-          <input id="searchInput" type="text" class="form-control form-control-sm" placeholder="Search ( / )" autocomplete="off" />
+      <div class="p-4 overflow-y-auto flex-1 space-y-6" id="sidebarContent">
+        <div>
+          <label class="block text-[11px] font-semibold uppercase tracking-wide text-slate-400 mb-1">Search</label>
+          <input id="searchInput" type="text" class="w-full rounded-md bg-surface-700/60 border border-surface-600 focus:ring-2 focus:ring-accent/60 focus:border-accent/60 text-sm px-3 py-2" placeholder="Search ( / )" autocomplete="off" />
         </div>
-        <div id="filterPanel" class="filters">
-          <div class="mb-3">
-            <label class="form-label small text-uppercase fw-semibold">Category</label>
-            <div id="categoryFilters" class="vstack gap-1"></div>
+        <div id="filterPanel" class="space-y-6">
+          <div>
+            <div class="flex items-center justify-between mb-1"><label class="text-[11px] font-semibold uppercase tracking-wide text-slate-400">Category</label></div>
+            <div id="categoryFilters" class="flex flex-col gap-1"></div>
           </div>
-          <div class="mb-3">
-            <label class="form-label small text-uppercase fw-semibold">Type</label>
-            <div id="typeFilters" class="vstack gap-1"></div>
+          <div>
+            <div class="flex items-center justify-between mb-1"><label class="text-[11px] font-semibold uppercase tracking-wide text-slate-400">Type</label></div>
+            <div id="typeFilters" class="flex flex-col gap-1"></div>
           </div>
-          <div class="mb-3">
-            <label class="form-label small text-uppercase fw-semibold">Sort</label>
-            <select id="sortSelect" class="form-select form-select-sm">
+          <div>
+            <label class="text-[11px] font-semibold uppercase tracking-wide text-slate-400 mb-1 block">Sort</label>
+            <select id="sortSelect" class="w-full rounded-md bg-surface-700/60 border border-surface-600 text-sm py-2 px-2 focus:ring-2 focus:ring-accent/60">
               <option value="name">Name (A-Z)</option>
               <option value="-name">Name (Z-A)</option>
               <option value="updated">Updated (Newest)</option>
               <option value="-updated">Updated (Oldest)</option>
             </select>
           </div>
-          <div class="mb-3">
-            <label class="form-label small text-uppercase fw-semibold">Semantic</label>
-            <div class="form-check form-switch">
+          <div>
+            <label class="text-[11px] font-semibold uppercase tracking-wide text-slate-400 mb-1 block">Semantic</label>
+            <label class="inline-flex items-center gap-2 cursor-pointer text-sm">
               <input class="form-check-input" type="checkbox" id="semanticToggle">
-              <label class="form-check-label" for="semanticToggle">Enable</label>
-            </div>
+              <span class="text-slate-300">Enable</span>
+            </label>
           </div>
         </div>
       </div>
     </aside>
-    <main class="flex-grow-1 d-flex flex-column position-relative">
-      <header class="app-header d-flex align-items-center px-3 border-bottom">
-        <div class="d-flex align-items-center gap-2 py-2">
-          <button class="btn btn-sm btn-outline-secondary d-md-none" id="sidebarToggle">☰</button>
-          <div class="small text-muted" id="statusBar">Loading…</div>
+    <!-- Main Area -->
+    <main class="flex flex-col flex-1 relative">
+      <header class="flex flex-col gap-2 px-4 py-2 border-b border-surface-700/60 backdrop-blur-xl bg-surface-800/40">
+        <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <button class="btn btn-sm btn-outline-secondary md:!hidden" id="sidebarToggle" title="Menu">☰</button>
+            <div id="statusBar" class="text-[11px] tracking-wide uppercase text-slate-400">Loading…</div>
+          </div>
+          <div class="hidden md:flex items-center gap-2">
+            <input id="searchInputClone" type="text" placeholder="Search assets" class="hidden md:block w-72 rounded-md bg-surface-700/60 border border-surface-600 focus:ring-2 focus:ring-accent/60 focus:border-accent/60 text-sm px-3 py-2" />
+          </div>
         </div>
+        <!-- Quick filter chips -->
+        <div id="quickFilters" class="flex flex-wrap gap-2 pb-1"></div>
       </header>
-      <div id="gridContainer" class="flex-grow-1 position-relative overflow-auto">
+      <div id="gridContainer" class="flex-1 relative overflow-auto">
         <div id="virtualGrid" class="virtual-grid" role="grid" aria-rowcount="-1"></div>
+        <div id="emptyState" class="hidden pointer-events-none select-none absolute inset-0 flex flex-col items-center justify-center text-center gap-6 text-slate-400">
+          <div class="text-6xl">🗂️</div>
+          <div class="space-y-2">
+            <h2 class="text-lg font-semibold text-slate-200">No Assets Found</h2>
+            <p class="text-sm max-w-md">Adjust filters or build the index from your library to begin exploring.</p>
+          </div>
+        </div>
       </div>
     </main>
     <div id="detailDrawer" class="detail-drawer">

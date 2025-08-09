@@ -1,11 +1,153 @@
 {
   "schemaVersion": 1,
-  "generated": "2025-08-09T00:00:00Z",
+  "generated": "2025-08-09T15:00:00.667Z",
+  "sourceRoot": "C:\\ImerzaLibrary",
   "items": [
-    {"id":"tbl_dng_set_5ee69972","displayName":"Table Dining Set","slug":"tbl_dng_set","type":"asset","category":"furniture","tags":["table","dining"],"autoTags":["wood","chairs"],"thumb":"https://via.placeholder.com/512x384.png?text=Table+Set","latestVersion":"002","updated":"2025-08-08"},
-    {"id":"chr_off_80ed0559","displayName":"Office Chair","slug":"chr_off","type":"asset","category":"furniture","tags":["chair","office"],"autoTags":["ergonomic","wheels"],"thumb":"https://via.placeholder.com/512x384.png?text=Office+Chair","latestVersion":"002","updated":"2025-08-05"},
-    {"id":"stl_scr_3004fdb5","displayName":"Stainless Steel Scratched","slug":"stl_scr_3004fdb5","type":"material","category":"metal","tags":["metal","steel"],"autoTags":["scratched"],"thumb":"https://via.placeholder.com/512x384.png?text=Steel","latestVersion":"001","updated":"2025-08-02"},
-    {"id":"rock_vivvaewaw","displayName":"Rock Formation A","slug":"rock_vivvaewaw","type":"asset","category":"nature","tags":["rock"],"autoTags":["stone","outdoor"],"thumb":"https://via.placeholder.com/512x384.png?text=Rock","latestVersion":"001","updated":"2025-08-04"},
-    {"id":"stl_scr_3004fdb5_tex","displayName":"Steel Roughness 4k","slug":"t_stl_scr_rough","type":"texture","category":"metal","tags":["roughness"],"autoTags":["pbr","metal"],"thumb":"https://via.placeholder.com/512x384.png?text=Texture","latestVersion":"001","updated":"2025-08-01"}
+    {
+      "id": "app_smg_cff_mac_2c879918",
+      "displayName": "app_smg_cff_mac",
+      "slug": "app_smg_cff_mac_2c879918",
+      "type": "asset",
+      "category": "Assets",
+      "tags": [],
+      "thumb": null,
+      "latestVersion": "001",
+      "updated": "2025-07-24"
+    },
+    {
+      "id": "box_sim_a2b1b347",
+      "displayName": "box_sim",
+      "slug": "box_sim_a2b1b347",
+      "type": "asset",
+      "category": "Assets",
+      "tags": [],
+      "thumb": null,
+      "latestVersion": "001",
+      "updated": "2025-08-05"
+    },
+    {
+      "id": "chr_ba318203",
+      "displayName": "chr",
+      "slug": "chr_ba318203",
+      "type": "asset",
+      "category": "Assets",
+      "tags": [],
+      "thumb": null,
+      "latestVersion": "001",
+      "updated": "2025-07-24"
+    },
+    {
+      "id": "orn_jug_876546d5",
+      "displayName": "orn_jug",
+      "slug": "orn_jug_876546d5",
+      "type": "asset",
+      "category": "Assets",
+      "tags": [],
+      "thumb": null,
+      "latestVersion": "001",
+      "updated": "2025-07-24"
+    },
+    {
+      "id": "orn_owl_d546d449",
+      "displayName": "orn_owl",
+      "slug": "orn_owl_d546d449",
+      "type": "asset",
+      "category": "Assets",
+      "tags": [],
+      "thumb": null,
+      "latestVersion": "001",
+      "updated": "2025-07-24"
+    },
+    {
+      "id": "sfa_min_78ac5cbf",
+      "displayName": "sfa_min",
+      "slug": "sfa_min_78ac5cbf",
+      "type": "asset",
+      "category": "Assets",
+      "tags": [],
+      "thumb": null,
+      "latestVersion": "001",
+      "updated": "2025-08-07"
+    },
+    {
+      "id": "sfa_out_744dca65",
+      "displayName": "sfa_out",
+      "slug": "sfa_out_744dca65",
+      "type": "asset",
+      "category": "Assets",
+      "tags": [],
+      "thumb": null,
+      "latestVersion": "001",
+      "updated": "2025-08-08"
+    },
+    {
+      "id": "smt_tbl_clg_55ff456f",
+      "displayName": "smt_tbl_clg",
+      "slug": "smt_tbl_clg_55ff456f",
+      "type": "asset",
+      "category": "Assets",
+      "tags": [],
+      "thumb": null,
+      "latestVersion": "001",
+      "updated": "2025-08-08"
+    },
+    {
+      "id": "4643849f68a9f5563815bae91b6e10360f36efa8308d8c4049cc4264856cf95a",
+      "displayName": "Sofa Outdoor",
+      "slug": "sfa_out",
+      "type": "asset",
+      "category": "furniture",
+      "tags": [
+        "sfa",
+        "out"
+      ],
+      "thumb": "Assets/Furniture/sfa_out_4643849f/v001/previews/preview_01_256.jpg",
+      "latestVersion": "001",
+      "updated": "2025-08-09"
+    },
+    {
+      "id": "tbl_dng_set_be122b74",
+      "displayName": "tbl_dng_set",
+      "slug": "tbl_dng_set_be122b74",
+      "type": "asset",
+      "category": "Assets",
+      "tags": [],
+      "thumb": null,
+      "latestVersion": "001",
+      "updated": "2025-08-06"
+    },
+    {
+      "id": "tre_jcr_mms_649a646c",
+      "displayName": "tre_jcr_mms",
+      "slug": "tre_jcr_mms_649a646c",
+      "type": "asset",
+      "category": "Assets",
+      "tags": [],
+      "thumb": null,
+      "latestVersion": "001",
+      "updated": "2025-07-22"
+    },
+    {
+      "id": "tree_palm_860356F5",
+      "displayName": "tre_plm_860356F5",
+      "slug": "tree_palm_860356F5",
+      "type": "asset",
+      "category": "Assets",
+      "tags": [],
+      "thumb": null,
+      "latestVersion": "001",
+      "updated": "2025-07-05"
+    },
+    {
+      "id": "unr_stt_65b4dfd2",
+      "displayName": "unr_stt",
+      "slug": "unr_stt_65b4dfd2",
+      "type": "asset",
+      "category": "Assets",
+      "tags": [],
+      "thumb": null,
+      "latestVersion": "001",
+      "updated": "2025-07-23"
+    }
   ]
 }

@@ -10,6 +10,9 @@ Prototype static web app for browsing large 3D asset/material/texture libraries.
 - Theme toggle (light/dark)
 - Settings panel (⚙️) storing library root path in localStorage
 - Mock dataset generator script (5k items)
+ - Real library index builder script (scans `asset_info.json` files)
+ - Tailwind + Bootstrap hybrid modern UI redesign
+ - Windows launcher batch file `start_viewer.bat`
 
 ## Planned (Per `copilot-instructions.md`)
 See detailed roadmap & architecture.
@@ -21,12 +24,43 @@ npx serve public -l 5173
 ```
 Then open: http://localhost:5173
 
+### Alternative: Integrated Proxy Server (serves external library)
+Use when your previews are outside `public/` (avoids copying or symlinks):
+```powershell
+node server.js --port 5173 --libraryRoot "C:/ImerzaLibrary"
+```
+This will first attempt to serve from `public/`, then fall back to the external library for paths like `/Assets/...` or `/mats/...`.
+
 Alternative (VS Code Live Server): open `public/index.html` and click "Go Live".
 
 ## Regenerate Mock Data
 ```powershell
 node scripts/build_mock_data.js > public/data/index_root.json
 ```
+
+## Build Index From Real Library
+Point to your local library root (e.g. `C:/ImerzaLibrary`).
+```powershell
+node scripts/build_index_from_library.js -r "C:/ImerzaLibrary" -o public/data/index_root.json
+```
+Then reload the app. Thumbnails will attempt to load relative to each asset folder; ensure your previews exist at the paths declared in `thumbnails.small/medium` or within latest version `previewImages`.
+
+If your real library is OUTSIDE the `public/` directory, raw file paths will 404 when served by the simple static server because the browser can only fetch files under `public/`. Options:
+1. Copy or symlink the previews directory tree into `public/Assets/…` (mirroring your library structure).
+2. Provide a prefix subfolder when generating the index so thumbnails point at a mirrored folder under `public/`.
+3. Run a small custom server that can proxy from a virtual URL path to your outside root (future enhancement).
+
+Prefix example (if you sync previews into `public/library_mirror`):
+```powershell
+node scripts/build_index_from_library.js -r "C:/ImerzaLibrary" -p "library_mirror" -o public/data/index_root.json
+```
+This produces thumbnail URLs like `/library_mirror/.../preview_01_256.jpg` which will resolve if that mirror exists.
+
+Windows symlink (needs admin or Developer Mode):
+```powershell
+New-Item -ItemType SymbolicLink -Path .\public\library_mirror -Target C:\ImerzaLibrary
+```
+Then regenerate the index with `-p library_mirror`.
 
 ## Next Development Steps (Actionable Roadmap)
 1. Real virtualization
