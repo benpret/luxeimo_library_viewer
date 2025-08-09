@@ -33,6 +33,7 @@ const el = {
   libraryRootInput: document.getElementById('libraryRootInput'),
   settingsMessage: document.getElementById('settingsMessage'),
   quickFilters: document.getElementById('quickFilters'),
+  thumbSizeGroup: document.getElementById('thumbSizeGroup'),
 };
 
 // Grid
@@ -100,6 +101,22 @@ function wireEvents() {
   el.cancelSettings?.addEventListener('click', () => closeSettings());
   el.settingsForm?.addEventListener('submit', e => { e.preventDefault(); saveSettings(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !el.settingsPanel.classList.contains('hidden')) closeSettings(); });
+  // Keyboard navigation in grid
+  document.addEventListener('keydown', e => handleGridNavigation(e));
+  // Thumbnail size controls
+  if (el.thumbSizeGroup) {
+  el.thumbSizeGroup.querySelectorAll('.ts-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        el.thumbSizeGroup.querySelectorAll('.ts-btn').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const size = parseInt(btn.dataset.size,10);
+        updateThumbSize(size);
+      });
+    });
+  // Sync active to current grid size
+  const active = el.thumbSizeGroup.querySelector(`.ts-btn[data-size="${grid.itemMinWidth}"]`);
+  if (active) { el.thumbSizeGroup.querySelectorAll('.ts-btn').forEach(b=>b.classList.remove('active')); active.classList.add('active'); }
+  }
 }
 
 function loadSettings() {
@@ -237,6 +254,7 @@ function createAssetCard(asset) {
   div.className = 'asset-card text-start';
   div.setAttribute('type','button');
   div.dataset.id = asset.id || asset.shortId;
+  div.tabIndex = 0;
   div.innerHTML = `
     <div class="asset-thumb-wrapper ${asset.thumb ? '' : 'skeleton'}" title="${asset.displayName}">
       ${asset.thumb ? `<img loading="lazy" decoding="async" src="${asset.thumb}" alt="${asset.displayName}">` : ''}
@@ -289,3 +307,31 @@ if ('serviceWorker' in navigator) {
 }
 
 function truncatePath(p){ return p && p.length>40 ? '…'+p.slice(-38) : p; }
+
+function updateThumbSize(size) {
+  grid.itemMinWidth = size;
+  grid.itemHeight = size; // square mode
+  grid.refreshLayout();
+}
+
+function handleGridNavigation(e) {
+  const focusable = [...el.grid.querySelectorAll('.asset-card')];
+  if (!focusable.length) return;
+  const idx = focusable.indexOf(document.activeElement);
+  const cols = grid.columns;
+  let next = -1;
+  switch(e.key) {
+    case 'ArrowRight': next = idx < 0 ? 0 : Math.min(focusable.length-1, idx+1); break;
+    case 'ArrowLeft': next = idx <= 0 ? 0 : idx-1; break;
+    case 'ArrowDown': next = idx < 0 ? 0 : Math.min(focusable.length-1, idx+cols); break;
+    case 'ArrowUp': next = idx < 0 ? 0 : Math.max(0, idx-cols); break;
+    case 'Home': next = 0; break;
+    case 'End': next = focusable.length-1; break;
+    case 'Enter': if (document.activeElement && document.activeElement.classList.contains('asset-card')) { const id = document.activeElement.dataset.id; const asset = State.filtered.find(a => (a.id||a.shortId)==id); if (asset) openDetail(asset); } return;
+    default: return;
+  }
+  if (next >= 0) {
+    e.preventDefault();
+    focusable[next].focus();
+  }
+}

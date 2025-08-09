@@ -31,7 +31,7 @@
 <body class="min-h-screen antialiased bg-gradient-to-br from-surface-900 via-surface-800 to-surface-900 text-slate-100 dark:text-slate-100">
   <div id="app" class="flex h-screen w-full overflow-hidden">
     <!-- Sidebar -->
-  <aside id="sidebar" class="app-sidebar flex flex-col w-72 bg-surface-800/60 backdrop-blur-xl border-r border-surface-700/60 mobile-collapsible">
+  <aside id="sidebar" class="app-sidebar flex flex-col w-72 bg-surface-800/60 backdrop-blur-xl mobile-collapsible">
       <div class="p-4 flex items-center justify-between gap-2 border-b border-surface-700/60">
         <div class="flex items-center gap-2">
           <div class="h-9 w-9 rounded-lg bg-gradient-to-br from-accent/40 to-accent/10 flex items-center justify-center shadow-glow">
@@ -79,14 +79,18 @@
     </aside>
     <!-- Main Area -->
     <main class="flex flex-col flex-1 relative">
-      <header class="flex flex-col gap-2 px-4 py-2 border-b border-surface-700/60 backdrop-blur-xl bg-surface-800/40">
+  <header class="flex flex-col gap-2 px-4 py-2 backdrop-blur-xl bg-surface-800/40">
         <div class="flex items-center justify-between">
         <div class="flex items-center gap-3">
             <button class="btn btn-sm btn-outline-secondary md:!hidden" id="sidebarToggle" title="Menu">☰</button>
             <div id="statusBar" class="text-[11px] tracking-wide uppercase text-slate-400">Loading…</div>
           </div>
-          <div class="hidden md:flex items-center gap-2">
-            <input id="searchInputClone" type="text" placeholder="Search assets" class="hidden md:block w-72 rounded-md bg-surface-700/60 border border-surface-600 focus:ring-2 focus:ring-accent/60 focus:border-accent/60 text-sm px-3 py-2" />
+          <div class="flex items-center gap-4">
+            <div class="flex items-stretch" id="thumbSizeGroup" role="group" aria-label="Thumbnail Size">
+              <button type="button" data-size="200" class="ts-btn" title="Small">S</button>
+              <button type="button" data-size="320" class="ts-btn active" title="Medium">M</button>
+              <button type="button" data-size="440" class="ts-btn" title="Large">L</button>
+            </div>
           </div>
         </div>
         <!-- Quick filter chips -->

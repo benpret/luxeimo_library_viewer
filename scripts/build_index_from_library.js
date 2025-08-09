@@ -37,7 +37,7 @@ function loadJsonSafe(file) {
   catch(err){ console.warn('Failed to parse', file, err.message); return null; }
 }
 
-function minify(meta, filePath, root) {
+function minify(meta, filePath, root, prefix='') {
   if (!meta) return null;
   const relDir = path.relative(root, path.dirname(filePath)).replace(/\\/g,'/');
   const latest = (meta.versions||[]).slice(-1)[0] || {};
