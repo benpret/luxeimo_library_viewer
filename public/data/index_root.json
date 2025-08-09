@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "generated": "2025-08-09T00:00:00Z",
+  "items": [
+    {"id":"tbl_dng_set_5ee69972","displayName":"Table Dining Set","slug":"tbl_dng_set","type":"asset","category":"furniture","tags":["table","dining"],"autoTags":["wood","chairs"],"thumb":"https://via.placeholder.com/512x384.png?text=Table+Set","latestVersion":"002","updated":"2025-08-08"},
+    {"id":"chr_off_80ed0559","displayName":"Office Chair","slug":"chr_off","type":"asset","category":"furniture","tags":["chair","office"],"autoTags":["ergonomic","wheels"],"thumb":"https://via.placeholder.com/512x384.png?text=Office+Chair","latestVersion":"002","updated":"2025-08-05"},
+    {"id":"stl_scr_3004fdb5","displayName":"Stainless Steel Scratched","slug":"stl_scr_3004fdb5","type":"material","category":"metal","tags":["metal","steel"],"autoTags":["scratched"],"thumb":"https://via.placeholder.com/512x384.png?text=Steel","latestVersion":"001","updated":"2025-08-02"},
+    {"id":"rock_vivvaewaw","displayName":"Rock Formation A","slug":"rock_vivvaewaw","type":"asset","category":"nature","tags":["rock"],"autoTags":["stone","outdoor"],"thumb":"https://via.placeholder.com/512x384.png?text=Rock","latestVersion":"001","updated":"2025-08-04"},
+    {"id":"stl_scr_3004fdb5_tex","displayName":"Steel Roughness 4k","slug":"t_stl_scr_rough","type":"texture","category":"metal","tags":["roughness"],"autoTags":["pbr","metal"],"thumb":"https://via.placeholder.com/512x384.png?text=Texture","latestVersion":"001","updated":"2025-08-01"}
+  ]
+}
