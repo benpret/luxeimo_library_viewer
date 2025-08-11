@@ -10,7 +10,7 @@ export class VirtualGrid {
     renderItem,
     itemMinWidth = 200,
     itemHeight = 240,
-  gap = 12,
+  gap = 6,
   overscanRows = 2,
   square = false
   }) {

@@ -41,9 +41,9 @@ const grid = new VirtualGrid({
   container: el.grid,
   scrollParent: document.getElementById('gridContainer'),
   renderItem: asset => createAssetCard(asset),
-  itemMinWidth: 320,
-  itemHeight: 320,
-  gap: 24,
+  itemMinWidth: 280,
+  itemHeight: 280,
+  gap: 6,
   overscanRows: 2,
   square: true
 });

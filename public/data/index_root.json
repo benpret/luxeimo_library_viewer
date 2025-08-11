@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generated": "2025-08-09T19:19:43.770Z",
+  "generated": "2025-08-11T14:56:30.396Z",
   "sourceRoot": "C:\\ImerzaLibrary",
   "prefix": "",
   "items": [
@@ -38,6 +38,20 @@
       "updated": "2025-07-24"
     },
     {
+      "id": "397419995d4756ba299b05fee7a74d91484524854ea3247b1115b87f642749c0",
+      "displayName": "Lounger Tosca",
+      "slug": "lgn_tsc",
+      "type": "asset",
+      "category": "furniture",
+      "tags": [
+        "lgn",
+        "tsc"
+      ],
+      "thumb": "Assets/Furniture/lgn_tsc_39741999/v001/previews/preview_01_512.jpg",
+      "latestVersion": "001",
+      "updated": "2025-08-11"
+    },
+    {
       "id": "orn_jug_876546d5",
       "displayName": "orn_jug",
       "slug": "orn_jug_876546d5",
@@ -69,7 +83,7 @@
         "sfa",
         "out"
       ],
-      "thumb": "Assets/Furniture/sfa_out_ea5dec7b/v001/previews/preview_01_256.jpg",
+      "thumb": "Assets/Furniture/sfa_out_ea5dec7b/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
       "updated": "2025-08-09"
     },
@@ -83,7 +97,7 @@
         "sfa",
         "out"
       ],
-      "thumb": "Assets/Furniture/tbl_dng_set_be122b74/v001/previews/preview_01_256.jpg",
+      "thumb": "Assets/Furniture/tbl_dng_set_be122b74/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
       "updated": "2025-08-06"
     },

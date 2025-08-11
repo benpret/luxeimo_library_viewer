@@ -41,7 +41,12 @@ function minify(meta, filePath, root, prefix='') {
   if (!meta) return null;
   const relDir = path.relative(root, path.dirname(filePath)).replace(/\\/g,'/');
   const latest = (meta.versions||[]).slice(-1)[0] || {};
-  const thumb = meta.thumbnails?.small || meta.thumbnails?.medium || (latest.previewImages ? latest.previewImages[0] : null);
+  // Prefer higher-res thumbnail (512) if available
+  const thumb =
+    meta.thumbnails?.medium || // 512
+    meta.thumbnails?.large  || // fallback up if present
+    meta.thumbnails?.small  || // last resort (256)
+    (latest.previewImages ? latest.previewImages[0] : null);
   const prefixAdj = prefix ? prefix.replace(/\/$/,'') + '/' : '';
   return {
     id: meta.id || meta.shortId || path.basename(relDir),
