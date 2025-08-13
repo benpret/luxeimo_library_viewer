@@ -73,6 +73,7 @@ function minify(meta, filePath, root, prefix='') {
   relDir,
     thumb: thumb ? prefixAdj + relDir + '/' + thumb : null,
     latestVersion: latest.version || null,
+  versions: Array.isArray(meta.versions) ? meta.versions.map(v=>v.version).filter(Boolean) : [],
     updated: latest.date || meta.createdDate || null
   };
 }

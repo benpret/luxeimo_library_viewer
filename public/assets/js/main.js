@@ -280,8 +280,16 @@ async function openDetail(asset) {
     if (dirBtn) {
       dirBtn.addEventListener('click', async () => {
         dirBtn.disabled = true;
-        try { await fetch(`/api/openDir?rel=${encodeURIComponent(dirBtn.dataset.rel)}`); }
-        finally { dirBtn.disabled = false; }
+        try {
+            const sel = document.getElementById('versionSelect');
+            let rel = dirBtn.dataset.rel;
+            const chosen = sel ? sel.value : null;
+            if (chosen) {
+              const folder = /^v\d{3}$/i.test(chosen) ? chosen.toLowerCase() : ('v'+chosen.toLowerCase());
+              if (!rel.toLowerCase().endsWith('/'+folder)) rel = rel + '/' + folder;
+            }
+            await fetch(`/api/openDir?rel=${encodeURIComponent(rel)}`);
+        } finally { dirBtn.disabled = false; }
       });
     }
   }, 100); // simulate latency
@@ -296,15 +304,28 @@ function detailTemplate(a) {
     if (idx > 0) relDir = parts.slice(0, idx).join('/');
   }
   const openBtn = relDir ? `<button class="btn btn-sm btn-outline-secondary" id="openDirBtn" data-rel="${relDir}">Open Directory</button>` : '';
-  return `<div>
-    <div class="ratio ratio-4x3 mb-2" style="background:#222;">
-      ${a.thumb ? `<img src="${a.thumb}" alt="${a.displayName}" style="object-fit:contain;">` : ''}
+  const tags = a.tags?.length ? `<div class="tags-wrap">${a.tags.map(t=>`<span class=tag>${t}</span>`).join('')}</div>` : '<div class="text-muted small">No tags</div>';
+  const versions = a.versions && a.versions.length ? [...a.versions] : (a.latestVersion ? [a.latestVersion] : []);
+  const sortedVersions = versions.sort((x,y)=> y.localeCompare(x,undefined,{numeric:true,sensitivity:'base'}));
+  const versionSelect = sortedVersions.length ? `<div class="meta-tile"><span class="meta-label">Version</span><div class="version-select"><select id="versionSelect">${sortedVersions.map(v=>`<option value="${v}">${v}</option>`).join('')}</select></div></div>` : '';
+  return `<div class="detail-body-inner">
+    <div class="preview-shell">${a.thumb ? `<img src="${a.thumb}" alt="${a.displayName}">` : '<div class=\"text-muted small\">No preview</div>'}</div>
+    <h3 class="mb-1">${a.displayName}</h3>
+    <div class="small text-muted">${a.category || '—'} • ${a.type || '—'}</div>
+    <div class="divider"></div>
+    <div class="meta-grid">
+      <div class="meta-tile"><span class="meta-label">ID</span><span class="meta-value"><code>${(a.id||a.shortId)||'—'}</code></span></div>
+      <div class="meta-tile"><span class="meta-label">Updated</span><span class="meta-value">${a.updated || '—'}</span></div>
+      <div class="meta-tile"><span class="meta-label">Type</span><span class="meta-value">${a.type||'—'}</span></div>
+      <div class="meta-tile"><span class="meta-label">Category</span><span class="meta-value">${a.category||'—'}</span></div>
+      ${versionSelect}
     </div>
-    <h3>${a.displayName}</h3>
-    <p class="small text-muted mb-1">Category: ${a.category || '—'} | Type: ${a.type || '—'}</p>
-    <p class="small">ID: <code>${a.id || a.shortId}</code></p>
-    ${a.tags?.length ? `<div class="mb-2"><strong>Tags:</strong> ${a.tags.map(t=>`<span class=tag>${t}</span>`).join(' ')} </div>`:''}
-    <div class="mt-3 d-flex gap-2 flex-wrap">
+    <div class="divider"></div>
+    <div>
+      <span class="meta-label" style="margin-bottom:.35rem;">Tags</span>
+      ${tags}
+    </div>
+    <div class="actions-bar">
       <button class="btn btn-sm btn-primary" disabled>Download (stub)</button>
       ${openBtn}
     </div>
