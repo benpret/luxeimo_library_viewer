@@ -48,13 +48,28 @@ function minify(meta, filePath, root, prefix='') {
     meta.thumbnails?.small  || // last resort (256)
     (latest.previewImages ? latest.previewImages[0] : null);
   const prefixAdj = prefix ? prefix.replace(/\/$/,'') + '/' : '';
+  // Consolidate tags: legacy meta.tags + userTags + aiTags (dedup, preserve order: tags -> userTags -> aiTags)
+  const baseTags = Array.isArray(meta.tags) ? meta.tags : [];
+  const userTags = Array.isArray(meta.userTags) ? meta.userTags : [];
+  const aiTags = Array.isArray(meta.aiTags) ? meta.aiTags : [];
+  const seen = new Set();
+  const tags = [];
+  for (const list of [baseTags, userTags, aiTags]) {
+    for (const t of list) {
+      if (!t) continue;
+      const key = t.toLowerCase();
+      if (seen.has(key)) continue;
+      seen.add(key);
+      tags.push(t);
+    }
+  }
   return {
     id: meta.id || meta.shortId || path.basename(relDir),
     displayName: meta.displayName || meta.name || meta.slug || path.basename(relDir),
     slug: meta.slug || path.basename(relDir),
     type: meta.type || 'asset',
     category: meta.category || relDir.split('/')[0] || 'uncategorized',
-    tags: meta.tags || [],
+    tags,
     thumb: thumb ? prefixAdj + relDir + '/' + thumb : null,
     latestVersion: latest.version || null,
     updated: latest.date || meta.createdDate || null

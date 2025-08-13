@@ -1,41 +1,25 @@
 {
   "schemaVersion": 1,
-  "generated": "2025-08-11T14:56:30.396Z",
+  "generated": "2025-08-13T18:37:01.191Z",
   "sourceRoot": "C:\\ImerzaLibrary",
   "prefix": "",
   "items": [
     {
-      "id": "app_smg_cff_mac_2c879918",
-      "displayName": "app_smg_cff_mac",
-      "slug": "app_smg_cff_mac_2c879918",
-      "type": "asset",
-      "category": "Assets",
-      "tags": [],
-      "thumb": null,
+      "id": "0aa055f8a0a32d962e69e6be1153bfb26d9df4d3dd45450836fc39f9e5df405f",
+      "displayName": "Gold Brushed",
+      "slug": "gld_brs",
+      "type": "material",
+      "category": "metal",
+      "tags": [
+        "gold",
+        "brushed",
+        "metal",
+        "expensive",
+        "luxurious"
+      ],
+      "thumb": "materials/metal/gld_brs_0aa055f8/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
-      "updated": "2025-07-24"
-    },
-    {
-      "id": "box_sim_a2b1b347",
-      "displayName": "box_sim",
-      "slug": "box_sim_a2b1b347",
-      "type": "asset",
-      "category": "Assets",
-      "tags": [],
-      "thumb": null,
-      "latestVersion": "001",
-      "updated": "2025-08-05"
-    },
-    {
-      "id": "chr_ba318203",
-      "displayName": "chr",
-      "slug": "chr_ba318203",
-      "type": "asset",
-      "category": "Assets",
-      "tags": [],
-      "thumb": null,
-      "latestVersion": "001",
-      "updated": "2025-07-24"
+      "updated": "2025-08-13"
     },
     {
       "id": "397419995d4756ba299b05fee7a74d91484524854ea3247b1115b87f642749c0",
@@ -52,26 +36,22 @@
       "updated": "2025-08-11"
     },
     {
-      "id": "orn_jug_876546d5",
-      "displayName": "orn_jug",
-      "slug": "orn_jug_876546d5",
-      "type": "asset",
-      "category": "Assets",
-      "tags": [],
-      "thumb": null,
+      "id": "ec6c8fca2c3b55cb6740604eeedb939dcde2e251fc7585e5615b81b2d752185f",
+      "displayName": "Marble Marquina",
+      "slug": "mrb_mrq",
+      "type": "material",
+      "category": "marble",
+      "tags": [
+        "marble",
+        "marquina",
+        "black",
+        "dark",
+        "veins",
+        "stone"
+      ],
+      "thumb": "materials/Marble/mrb_mrq_ec6c8fca/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
-      "updated": "2025-07-24"
-    },
-    {
-      "id": "orn_owl_d546d449",
-      "displayName": "orn_owl",
-      "slug": "orn_owl_d546d449",
-      "type": "asset",
-      "category": "Assets",
-      "tags": [],
-      "thumb": null,
-      "latestVersion": "001",
-      "updated": "2025-07-24"
+      "updated": "2025-08-13"
     },
     {
       "id": "ea5dec7b0a1bcd6353574e67f1ffbd30e345b83370a16d069c43522f52e5de89",
@@ -102,37 +82,285 @@
       "updated": "2025-08-06"
     },
     {
-      "id": "tre_jcr_mms_649a646c",
-      "displayName": "tre_jcr_mms",
-      "slug": "tre_jcr_mms_649a646c",
+      "id": "99e56dce68b2dedb1382271d3d2b7e2e28f477668d6068afb1f9744996cf5394",
+      "displayName": "Tree Cocos Nucifera",
+      "slug": "tre_ccs_ncf",
       "type": "asset",
-      "category": "Assets",
-      "tags": [],
-      "thumb": null,
+      "category": "nature",
+      "tags": [
+        "tree",
+        "cocos",
+        "nucifera",
+        "coconut",
+        "palm",
+        "tropical",
+        "paradise",
+        "summer",
+        "beach"
+      ],
+      "thumb": "Assets/Nature/tre_ccs_ncf_99e56dce/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
-      "updated": "2025-07-22"
+      "updated": "2025-08-13"
     },
     {
-      "id": "tree_palm_860356F5",
-      "displayName": "tre_plm_860356F5",
-      "slug": "tree_palm_860356F5",
+      "id": "9b3f916b0efcf4ccc877bee1d858005e83181b4b8ed1526e09776a6d959788c0",
+      "displayName": "Tree Cocos Nucifera",
+      "slug": "tre_ccs_ncf",
       "type": "asset",
-      "category": "Assets",
-      "tags": [],
-      "thumb": null,
+      "category": "nature",
+      "tags": [
+        "tree",
+        "cocos",
+        "nucifera",
+        "coconut",
+        "palm",
+        "tropical",
+        "paradise",
+        "summer",
+        "beach"
+      ],
+      "thumb": "Assets/Nature/tre_ccs_ncf_9b3f916b/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
-      "updated": "2025-07-05"
+      "updated": "2025-08-13"
     },
     {
-      "id": "unr_stt_65b4dfd2",
-      "displayName": "unr_stt",
-      "slug": "unr_stt_65b4dfd2",
+      "id": "b274f346246a2d0d5c65a93119c8141fe69c65117824d4fcd37962599c1f1f2c",
+      "displayName": "Tree Cocos Nucifera",
+      "slug": "tre_ccs_ncf",
       "type": "asset",
-      "category": "Assets",
-      "tags": [],
-      "thumb": null,
+      "category": "nature",
+      "tags": [
+        "tree",
+        "cocos",
+        "nucifera",
+        "coconut",
+        "palm",
+        "tropical",
+        "paradise",
+        "summer",
+        "beach"
+      ],
+      "thumb": "Assets/Nature/tre_ccs_ncf_b274f346/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
-      "updated": "2025-07-23"
+      "updated": "2025-08-13"
+    },
+    {
+      "id": "47c19969b4fd4a79b6bab2b20ca224ce97a11abad3f129b210b48d8da22cda4c",
+      "displayName": "Tree Cocos Nucifera LowPoly",
+      "slug": "tre_ccs_ncf_lwp",
+      "type": "asset",
+      "category": "nature",
+      "tags": [
+        "tree",
+        "cocos",
+        "nucifera",
+        "lowpoly",
+        "coconut",
+        "palm",
+        "tropical",
+        "paradise",
+        "summer",
+        "beach"
+      ],
+      "thumb": "Assets/Nature/tre_ccs_ncf_lwp_47c19969/v001/previews/preview_01_512.jpg",
+      "latestVersion": "001",
+      "updated": "2025-08-13"
+    },
+    {
+      "id": "6bc0d25f8937cff7504d4ed251f4b38b732ad5a8962cdc38f353628a3f7eafd6",
+      "displayName": "Tree Cocos Nucifera LowPoly",
+      "slug": "tre_ccs_ncf_lwp",
+      "type": "asset",
+      "category": "nature",
+      "tags": [
+        "tree",
+        "cocos",
+        "nucifera",
+        "lowpoly",
+        "coconut",
+        "palm",
+        "tropical",
+        "paradise",
+        "summer",
+        "beach"
+      ],
+      "thumb": "Assets/Nature/tre_ccs_ncf_lwp_6bc0d25f/v001/previews/preview_01_512.jpg",
+      "latestVersion": "001",
+      "updated": "2025-08-13"
+    },
+    {
+      "id": "785c60f8ef467a30e46062fa98dbb6e6b73c6f518122a171a9df9755cd7d5329",
+      "displayName": "Tree Cocos Nucifera LowPoly",
+      "slug": "tre_ccs_ncf_lwp",
+      "type": "asset",
+      "category": "nature",
+      "tags": [
+        "tree",
+        "cocos",
+        "nucifera",
+        "lowpoly",
+        "coconut",
+        "palm",
+        "tropical",
+        "paradise",
+        "summer",
+        "beach"
+      ],
+      "thumb": "Assets/Nature/tre_ccs_ncf_lwp_785c60f8/v001/previews/preview_01_512.jpg",
+      "latestVersion": "001",
+      "updated": "2025-08-13"
+    },
+    {
+      "id": "c26c26b9cf04ad05d5a2e9f13eb9c6a9e9d2668c7a56c3fb6a1544b671b2941d",
+      "displayName": "Tree Cocos Nucifera LowPoly",
+      "slug": "tre_ccs_ncf_lwp",
+      "type": "asset",
+      "category": "nature",
+      "tags": [
+        "tree",
+        "cocos",
+        "nucifera",
+        "lowpoly",
+        "coconut",
+        "palm",
+        "tropical",
+        "paradise",
+        "summer",
+        "beach"
+      ],
+      "thumb": "Assets/Nature/tre_ccs_ncf_lwp_c26c26b9/v001/previews/preview_01_512.jpg",
+      "latestVersion": "001",
+      "updated": "2025-08-13"
+    },
+    {
+      "id": "6a67b9281cb663406f879238931ada932a06bb013ae37b6973f560af8d8e299c",
+      "displayName": "Tree CocosNucifera Dry Leaf",
+      "slug": "tre_coc_dry_lef",
+      "type": "material",
+      "category": "vegetation",
+      "tags": [
+        "tree",
+        "cocosnucifera",
+        "dry",
+        "leaf",
+        "cocos",
+        "nucifera",
+        "beach",
+        "tropical",
+        "coconut"
+      ],
+      "thumb": "materials/Vegetation/tre_coc_dry_lef_6a67b928/v001/previews/preview_01_512.jpg",
+      "latestVersion": "001",
+      "updated": "2025-08-13"
+    },
+    {
+      "id": "1fb77eb7ffd20dc4943933056ba49fbeb3f1e25bb6531a4a61815cdbea260dfa",
+      "displayName": "Tree CocosNucifera Leaf",
+      "slug": "tre_coc_lef",
+      "type": "material",
+      "category": "vegetation",
+      "tags": [
+        "tree",
+        "cocosnucifera",
+        "leaf",
+        "cocos",
+        "nucifera",
+        "beach",
+        "tropical",
+        "coconut"
+      ],
+      "thumb": "materials/Vegetation/tre_coc_lef_1fb77eb7/v001/previews/preview_01_512.jpg",
+      "latestVersion": "001",
+      "updated": "2025-08-13"
+    },
+    {
+      "id": "5db190fae15bdaa128a4a0e2c936d9895886f38390d98097309f8e12eab190e1",
+      "displayName": "Tree CocosNucifera Lowpoly Leaves",
+      "slug": "tre_coc_low_lea",
+      "type": "material",
+      "category": "vegetation",
+      "tags": [
+        "tree",
+        "cocosnucifera",
+        "lowpoly",
+        "leaves",
+        "cocos",
+        "nucifera",
+        "coconut",
+        "palm",
+        "tropical",
+        "paradise",
+        "summer",
+        "beach"
+      ],
+      "thumb": "materials/Vegetation/tre_coc_low_lea_5db190fa/v001/previews/preview_01_512.jpg",
+      "latestVersion": "001",
+      "updated": "2025-08-13"
+    },
+    {
+      "id": "91426e2b6a406e000aa03f65f08a6cb11574ee94b20501978727b322c21d82e5",
+      "displayName": "Tree CocosNucifera LowPoly Trunk",
+      "slug": "tre_coc_low_trk",
+      "type": "material",
+      "category": "vegetation",
+      "tags": [
+        "tree",
+        "cocosnucifera",
+        "lowpoly",
+        "trunk",
+        "cocos",
+        "nucifera",
+        "coconut",
+        "palm",
+        "tropical",
+        "paradise",
+        "summer",
+        "beach"
+      ],
+      "thumb": "materials/Vegetation/tre_coc_low_trk_91426e2b/v001/previews/preview_01_512.jpg",
+      "latestVersion": "001",
+      "updated": "2025-08-13"
+    },
+    {
+      "id": "53e9974f8d255aceab245abe30a167bfde8962c7c3510824f4adc7cd41e8e127",
+      "displayName": "Tree CocosNucifera Stalk",
+      "slug": "tre_coc_stk",
+      "type": "material",
+      "category": "vegetation",
+      "tags": [
+        "tree",
+        "cocosnucifera",
+        "stalk",
+        "cocos",
+        "nucifera",
+        "beach",
+        "tropical",
+        "coconut"
+      ],
+      "thumb": "materials/Vegetation/tre_coc_stk_53e9974f/v001/previews/preview_01_512.jpg",
+      "latestVersion": "001",
+      "updated": "2025-08-13"
+    },
+    {
+      "id": "bde9c2fc2f90d25988119d39fa5bd5e3b5e0d237b539308d0599728d2a492ba4",
+      "displayName": "Tree CocosNucifera Trunk",
+      "slug": "tre_coc_trk",
+      "type": "material",
+      "category": "vegetation",
+      "tags": [
+        "tree",
+        "cocosnucifera",
+        "trunk",
+        "cocos",
+        "nucifera",
+        "beach",
+        "tropical",
+        "coconut",
+        "bark"
+      ],
+      "thumb": "materials/Vegetation/tre_coc_trk_bde9c2fc/v001/previews/preview_01_512.jpg",
+      "latestVersion": "001",
+      "updated": "2025-08-13"
     }
   ]
 }

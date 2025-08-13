@@ -1,6 +1,6 @@
 :root {
-  --bg: #2a2a2a; /* requested uniform background */
-  --bg-alt: #2a2a2a;
+  --bg: #1c1c1c; /* requested uniform background */
+  --bg-alt: #1c1c1c;
   --surface: #333;
   --border: #3b3b3b;
   --text: #f2f2f2;
@@ -49,8 +49,8 @@ h3 { font-size: var(--fs-md); font-weight:600; }
 
 .asset-card { position:relative; background:transparent; border:none; padding:4px; display:block; cursor:pointer; }
 .asset-card:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
-.asset-thumb-wrapper { aspect-ratio:1/1; background:#2a2a2a; position:relative; border-radius:10px; overflow:hidden; }
-.asset-thumb-wrapper img { width:102%; height:102%; object-fit:contain; display:block; background:#2a2a2a; position:absolute; top:-1%; left:-1%; }
+.asset-thumb-wrapper { aspect-ratio:1/1; background:#1c1c1c; position:relative; border-radius:10px; overflow:hidden; }
+.asset-thumb-wrapper img { width:102%; height:102%; object-fit:contain; display:block; background:#1c1c1c; position:absolute; top:-1%; left:-1%; }
 /* Hover / keyboard focus outline without shadow */
 .asset-card:hover .asset-thumb-wrapper, .asset-card:focus-visible .asset-thumb-wrapper { outline:2px solid var(--accent); outline-offset:0; box-shadow:none; }
 /* Thumbnail size buttons */

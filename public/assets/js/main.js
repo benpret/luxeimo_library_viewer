@@ -287,8 +287,7 @@ function detailTemplate(a) {
     <h3>${a.displayName}</h3>
     <p class="small text-muted mb-1">Category: ${a.category || '—'} | Type: ${a.type || '—'}</p>
     <p class="small">ID: <code>${a.id || a.shortId}</code></p>
-    ${a.tags?.length ? `<div class="mb-2"><strong>Tags:</strong> ${a.tags.map(t=>`<span class=tag>${t}</span>`).join(' ')}</div>`:''}
-    ${a.autoTags?.length ? `<div class="mb-2"><strong>AI Tags:</strong> ${a.autoTags.map(t=>`<span class='tag tag-ai' title='AI generated'>${t}</span>`).join(' ')}</div>`:''}
+  ${a.tags?.length ? `<div class="mb-2"><strong>Tags:</strong> ${a.tags.map(t=>`<span class=tag>${t}</span>`).join(' ')}</div>`:''}
     <div class="mt-3">
       <button class="btn btn-sm btn-primary" disabled>Download (stub)</button>
     </div>

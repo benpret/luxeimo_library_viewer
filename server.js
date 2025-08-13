@@ -68,8 +68,9 @@ async function fileExists(p){ try { const st = await fsp.stat(p); return st.isFi
 function isSafe(subPath) { return !subPath.split('\\').some(s => s==='..') && !subPath.split('/').some(s => s==='..'); }
 
 function shouldTryLibrary(urlPath) {
-  // Accept top-level asset folders you expect in library
-  return urlPath.startsWith('/Assets/') || urlPath.startsWith('/assets/') || urlPath.startsWith('/mats/') || urlPath.startsWith('/Mats/');
+  // Accept common top-level library folders (case-insensitive)
+  // Includes: assets, materials, mats
+  return /^(\/)(assets?|materials?|mats)\//i.test(urlPath);
 }
 
 async function handler(req, res, opts) {
