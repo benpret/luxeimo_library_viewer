@@ -70,6 +70,7 @@ function minify(meta, filePath, root, prefix='') {
     type: meta.type || 'asset',
     category: meta.category || relDir.split('/')[0] || 'uncategorized',
     tags,
+  relDir,
     thumb: thumb ? prefixAdj + relDir + '/' + thumb : null,
     latestVersion: latest.version || null,
     updated: latest.date || meta.createdDate || null

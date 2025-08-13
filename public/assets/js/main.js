@@ -276,10 +276,26 @@ async function openDetail(asset) {
   // In real impl, fetch full asset_info.json here
   setTimeout(() => {
     el.drawerBody.innerHTML = detailTemplate(asset);
+    const dirBtn = document.getElementById('openDirBtn');
+    if (dirBtn) {
+      dirBtn.addEventListener('click', async () => {
+        dirBtn.disabled = true;
+        try { await fetch(`/api/openDir?rel=${encodeURIComponent(dirBtn.dataset.rel)}`); }
+        finally { dirBtn.disabled = false; }
+      });
+    }
   }, 100); // simulate latency
 }
 
 function detailTemplate(a) {
+  // Determine relative dir (precomputed or inferred from thumb path)
+  let relDir = a.relDir;
+  if (!relDir && a.thumb) {
+    const parts = a.thumb.split('/');
+    const idx = parts.findIndex(p => /^v\d{3}$/i.test(p));
+    if (idx > 0) relDir = parts.slice(0, idx).join('/');
+  }
+  const openBtn = relDir ? `<button class="btn btn-sm btn-outline-secondary" id="openDirBtn" data-rel="${relDir}">Open Directory</button>` : '';
   return `<div>
     <div class="ratio ratio-4x3 mb-2" style="background:#222;">
       ${a.thumb ? `<img src="${a.thumb}" alt="${a.displayName}" style="object-fit:contain;">` : ''}
@@ -287,9 +303,10 @@ function detailTemplate(a) {
     <h3>${a.displayName}</h3>
     <p class="small text-muted mb-1">Category: ${a.category || '—'} | Type: ${a.type || '—'}</p>
     <p class="small">ID: <code>${a.id || a.shortId}</code></p>
-  ${a.tags?.length ? `<div class="mb-2"><strong>Tags:</strong> ${a.tags.map(t=>`<span class=tag>${t}</span>`).join(' ')}</div>`:''}
-    <div class="mt-3">
+    ${a.tags?.length ? `<div class="mb-2"><strong>Tags:</strong> ${a.tags.map(t=>`<span class=tag>${t}</span>`).join(' ')} </div>`:''}
+    <div class="mt-3 d-flex gap-2 flex-wrap">
       <button class="btn btn-sm btn-primary" disabled>Download (stub)</button>
+      ${openBtn}
     </div>
   </div>`;
 }

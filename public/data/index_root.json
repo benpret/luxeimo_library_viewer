@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generated": "2025-08-13T18:37:01.191Z",
+  "generated": "2025-08-13T19:35:21.135Z",
   "sourceRoot": "C:\\ImerzaLibrary",
   "prefix": "",
   "items": [
@@ -17,6 +17,7 @@
         "expensive",
         "luxurious"
       ],
+      "relDir": "materials/metal/gld_brs_0aa055f8",
       "thumb": "materials/metal/gld_brs_0aa055f8/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
       "updated": "2025-08-13"
@@ -31,6 +32,7 @@
         "lgn",
         "tsc"
       ],
+      "relDir": "Assets/Furniture/lgn_tsc_39741999",
       "thumb": "Assets/Furniture/lgn_tsc_39741999/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
       "updated": "2025-08-11"
@@ -49,6 +51,7 @@
         "veins",
         "stone"
       ],
+      "relDir": "materials/Marble/mrb_mrq_ec6c8fca",
       "thumb": "materials/Marble/mrb_mrq_ec6c8fca/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
       "updated": "2025-08-13"
@@ -63,6 +66,7 @@
         "sfa",
         "out"
       ],
+      "relDir": "Assets/Furniture/sfa_out_ea5dec7b",
       "thumb": "Assets/Furniture/sfa_out_ea5dec7b/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
       "updated": "2025-08-09"
@@ -77,6 +81,7 @@
         "sfa",
         "out"
       ],
+      "relDir": "Assets/Furniture/tbl_dng_set_be122b74",
       "thumb": "Assets/Furniture/tbl_dng_set_be122b74/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
       "updated": "2025-08-06"
@@ -98,6 +103,7 @@
         "summer",
         "beach"
       ],
+      "relDir": "Assets/Nature/tre_ccs_ncf_99e56dce",
       "thumb": "Assets/Nature/tre_ccs_ncf_99e56dce/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
       "updated": "2025-08-13"
@@ -119,6 +125,7 @@
         "summer",
         "beach"
       ],
+      "relDir": "Assets/Nature/tre_ccs_ncf_9b3f916b",
       "thumb": "Assets/Nature/tre_ccs_ncf_9b3f916b/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
       "updated": "2025-08-13"
@@ -140,6 +147,7 @@
         "summer",
         "beach"
       ],
+      "relDir": "Assets/Nature/tre_ccs_ncf_b274f346",
       "thumb": "Assets/Nature/tre_ccs_ncf_b274f346/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
       "updated": "2025-08-13"
@@ -162,6 +170,7 @@
         "summer",
         "beach"
       ],
+      "relDir": "Assets/Nature/tre_ccs_ncf_lwp_47c19969",
       "thumb": "Assets/Nature/tre_ccs_ncf_lwp_47c19969/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
       "updated": "2025-08-13"
@@ -184,6 +193,7 @@
         "summer",
         "beach"
       ],
+      "relDir": "Assets/Nature/tre_ccs_ncf_lwp_6bc0d25f",
       "thumb": "Assets/Nature/tre_ccs_ncf_lwp_6bc0d25f/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
       "updated": "2025-08-13"
@@ -206,6 +216,7 @@
         "summer",
         "beach"
       ],
+      "relDir": "Assets/Nature/tre_ccs_ncf_lwp_785c60f8",
       "thumb": "Assets/Nature/tre_ccs_ncf_lwp_785c60f8/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
       "updated": "2025-08-13"
@@ -228,6 +239,7 @@
         "summer",
         "beach"
       ],
+      "relDir": "Assets/Nature/tre_ccs_ncf_lwp_c26c26b9",
       "thumb": "Assets/Nature/tre_ccs_ncf_lwp_c26c26b9/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
       "updated": "2025-08-13"
@@ -249,6 +261,7 @@
         "tropical",
         "coconut"
       ],
+      "relDir": "materials/Vegetation/tre_coc_dry_lef_6a67b928",
       "thumb": "materials/Vegetation/tre_coc_dry_lef_6a67b928/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
       "updated": "2025-08-13"
@@ -269,6 +282,7 @@
         "tropical",
         "coconut"
       ],
+      "relDir": "materials/Vegetation/tre_coc_lef_1fb77eb7",
       "thumb": "materials/Vegetation/tre_coc_lef_1fb77eb7/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
       "updated": "2025-08-13"
@@ -293,6 +307,7 @@
         "summer",
         "beach"
       ],
+      "relDir": "materials/Vegetation/tre_coc_low_lea_5db190fa",
       "thumb": "materials/Vegetation/tre_coc_low_lea_5db190fa/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
       "updated": "2025-08-13"
@@ -317,6 +332,7 @@
         "summer",
         "beach"
       ],
+      "relDir": "materials/Vegetation/tre_coc_low_trk_91426e2b",
       "thumb": "materials/Vegetation/tre_coc_low_trk_91426e2b/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
       "updated": "2025-08-13"
@@ -337,6 +353,7 @@
         "tropical",
         "coconut"
       ],
+      "relDir": "materials/Vegetation/tre_coc_stk_53e9974f",
       "thumb": "materials/Vegetation/tre_coc_stk_53e9974f/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
       "updated": "2025-08-13"
@@ -358,7 +375,74 @@
         "coconut",
         "bark"
       ],
+      "relDir": "materials/Vegetation/tre_coc_trk_bde9c2fc",
       "thumb": "materials/Vegetation/tre_coc_trk_bde9c2fc/v001/previews/preview_01_512.jpg",
+      "latestVersion": "001",
+      "updated": "2025-08-13"
+    },
+    {
+      "id": "cc37a36e08df2776f59308268b1e78fcca2bcf8526a2a3b4a6af14f787bcb8dd",
+      "displayName": "Tree Ficus Macrophylla",
+      "slug": "tre_fcs_mcr",
+      "type": "asset",
+      "category": "nature",
+      "tags": [
+        "tree",
+        "ficus",
+        "macrophylla"
+      ],
+      "relDir": "Assets/Nature/tre_fcs_mcr_cc37a36e",
+      "thumb": "Assets/Nature/tre_fcs_mcr_cc37a36e/v001/previews/preview_01_512.jpg",
+      "latestVersion": "001",
+      "updated": "2025-08-13"
+    },
+    {
+      "id": "dcbf6ac5bddf16ea8b49875e1645e2432aa7fab3cf424dcc0e2446230b4d6c2e",
+      "displayName": "Tree Ficus Macrophylla",
+      "slug": "tre_fcs_mcr",
+      "type": "asset",
+      "category": "nature",
+      "tags": [
+        "tree",
+        "ficus",
+        "macrophylla"
+      ],
+      "relDir": "Assets/Nature/tre_fcs_mcr_dcbf6ac5",
+      "thumb": "Assets/Nature/tre_fcs_mcr_dcbf6ac5/v001/previews/preview_01_512.jpg",
+      "latestVersion": "001",
+      "updated": "2025-08-13"
+    },
+    {
+      "id": "995f42624ab4407dc77aa11a0cb700d2b10fe4cd95a0d6109f88db27149e87b5",
+      "displayName": "Tree Ficus Macrophylla Leaf",
+      "slug": "tre_fcs_mcr_laf",
+      "type": "material",
+      "category": "vegetation",
+      "tags": [
+        "tree",
+        "ficus",
+        "macrophylla",
+        "leaf"
+      ],
+      "relDir": "materials/Vegetation/tre_fcs_mcr_laf_995f4262",
+      "thumb": "materials/Vegetation/tre_fcs_mcr_laf_995f4262/v001/previews/preview_01_512.jpg",
+      "latestVersion": "001",
+      "updated": "2025-08-13"
+    },
+    {
+      "id": "8236cd2d9dc204f2fdaaf1cd446f9444e67726b8ae1742835413a18234bba16e",
+      "displayName": "Tree Ficus Macrophylla Trunk",
+      "slug": "tre_fcs_mcr_trk",
+      "type": "material",
+      "category": "vegetation",
+      "tags": [
+        "tree",
+        "ficus",
+        "macrophylla",
+        "trunk"
+      ],
+      "relDir": "materials/Vegetation/tre_fcs_mcr_trk_8236cd2d",
+      "thumb": "materials/Vegetation/tre_fcs_mcr_trk_8236cd2d/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
       "updated": "2025-08-13"
     }
