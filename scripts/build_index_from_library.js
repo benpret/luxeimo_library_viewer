@@ -41,11 +41,15 @@ function minify(meta, filePath, root, prefix='') {
   if (!meta) return null;
   const relDir = path.relative(root, path.dirname(filePath)).replace(/\\/g,'/');
   const latest = (meta.versions||[]).slice(-1)[0] || {};
-  // Prefer higher-res thumbnail (512) if available
+  // New schema: thumbnails now live inside each version object, not at root.
+  // Backwards + forwards compatible lookup order (prefer higher-res 512):
   const thumb =
-    meta.thumbnails?.medium || // 512
-    meta.thumbnails?.large  || // fallback up if present
-    meta.thumbnails?.small  || // last resort (256)
+    meta.thumbnails?.medium || // legacy root (512)
+    meta.thumbnails?.large  || // legacy root large
+    meta.thumbnails?.small  || // legacy root small
+    latest.thumbnails?.medium ||
+    latest.thumbnails?.large  ||
+    latest.thumbnails?.small  ||
     (latest.previewImages ? latest.previewImages[0] : null);
   const prefixAdj = prefix ? prefix.replace(/\/$/,'') + '/' : '';
   // Consolidate tags: legacy meta.tags + userTags + aiTags (dedup, preserve order: tags -> userTags -> aiTags)
@@ -65,6 +69,7 @@ function minify(meta, filePath, root, prefix='') {
   }
   return {
     id: meta.id || meta.shortId || path.basename(relDir),
+  shortId: meta.shortId || null,
     displayName: meta.displayName || meta.name || meta.slug || path.basename(relDir),
     slug: meta.slug || path.basename(relDir),
     type: meta.type || 'asset',

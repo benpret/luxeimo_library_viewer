@@ -1,11 +1,31 @@
 {
   "schemaVersion": 1,
-  "generated": "2025-08-13T19:35:21.135Z",
+  "generated": "2025-08-14T11:24:23.338Z",
   "sourceRoot": "C:\\ImerzaLibrary",
   "prefix": "",
   "items": [
     {
+      "id": "413f69851e3f5f53099950f330e35a931d0da5fd3d55dbca7e594d615181710d",
+      "shortId": "413f6985",
+      "displayName": "Box_Simple",
+      "slug": "box_sim",
+      "type": "asset",
+      "category": "props_external",
+      "tags": [
+        "box",
+        "simple"
+      ],
+      "relDir": "Assets/Props_External/box_sim_413f6985",
+      "thumb": "Assets/Props_External/box_sim_413f6985/v001/previews/preview_01_512.jpg",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-14"
+    },
+    {
       "id": "0aa055f8a0a32d962e69e6be1153bfb26d9df4d3dd45450836fc39f9e5df405f",
+      "shortId": "0aa055f8",
       "displayName": "Gold Brushed",
       "slug": "gld_brs",
       "type": "material",
@@ -20,10 +40,14 @@
       "relDir": "materials/metal/gld_brs_0aa055f8",
       "thumb": "materials/metal/gld_brs_0aa055f8/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
       "updated": "2025-08-13"
     },
     {
       "id": "397419995d4756ba299b05fee7a74d91484524854ea3247b1115b87f642749c0",
+      "shortId": "39741999",
       "displayName": "Lounger Tosca",
       "slug": "lgn_tsc",
       "type": "asset",
@@ -35,10 +59,14 @@
       "relDir": "Assets/Furniture/lgn_tsc_39741999",
       "thumb": "Assets/Furniture/lgn_tsc_39741999/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
       "updated": "2025-08-11"
     },
     {
       "id": "ec6c8fca2c3b55cb6740604eeedb939dcde2e251fc7585e5615b81b2d752185f",
+      "shortId": "ec6c8fca",
       "displayName": "Marble Marquina",
       "slug": "mrb_mrq",
       "type": "material",
@@ -54,10 +82,14 @@
       "relDir": "materials/Marble/mrb_mrq_ec6c8fca",
       "thumb": "materials/Marble/mrb_mrq_ec6c8fca/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
       "updated": "2025-08-13"
     },
     {
       "id": "ea5dec7b0a1bcd6353574e67f1ffbd30e345b83370a16d069c43522f52e5de89",
+      "shortId": "ea5dec7b",
       "displayName": "Sofa Outdoor",
       "slug": "sfa_out",
       "type": "asset",
@@ -69,10 +101,14 @@
       "relDir": "Assets/Furniture/sfa_out_ea5dec7b",
       "thumb": "Assets/Furniture/sfa_out_ea5dec7b/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
       "updated": "2025-08-09"
     },
     {
       "id": "be122b74169eb8203c290e8573634373cf7dc11584adea334beca97a72f730da",
+      "shortId": "be122b74",
       "displayName": "Table Dining Set",
       "slug": "tbl_dng_set",
       "type": "asset",
@@ -84,10 +120,14 @@
       "relDir": "Assets/Furniture/tbl_dng_set_be122b74",
       "thumb": "Assets/Furniture/tbl_dng_set_be122b74/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
       "updated": "2025-08-06"
     },
     {
       "id": "99e56dce68b2dedb1382271d3d2b7e2e28f477668d6068afb1f9744996cf5394",
+      "shortId": "99e56dce",
       "displayName": "Tree Cocos Nucifera",
       "slug": "tre_ccs_ncf",
       "type": "asset",
@@ -106,10 +146,14 @@
       "relDir": "Assets/Nature/tre_ccs_ncf_99e56dce",
       "thumb": "Assets/Nature/tre_ccs_ncf_99e56dce/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
       "updated": "2025-08-13"
     },
     {
       "id": "9b3f916b0efcf4ccc877bee1d858005e83181b4b8ed1526e09776a6d959788c0",
+      "shortId": "9b3f916b",
       "displayName": "Tree Cocos Nucifera",
       "slug": "tre_ccs_ncf",
       "type": "asset",
@@ -128,10 +172,14 @@
       "relDir": "Assets/Nature/tre_ccs_ncf_9b3f916b",
       "thumb": "Assets/Nature/tre_ccs_ncf_9b3f916b/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
       "updated": "2025-08-13"
     },
     {
       "id": "b274f346246a2d0d5c65a93119c8141fe69c65117824d4fcd37962599c1f1f2c",
+      "shortId": "b274f346",
       "displayName": "Tree Cocos Nucifera",
       "slug": "tre_ccs_ncf",
       "type": "asset",
@@ -150,10 +198,14 @@
       "relDir": "Assets/Nature/tre_ccs_ncf_b274f346",
       "thumb": "Assets/Nature/tre_ccs_ncf_b274f346/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
       "updated": "2025-08-13"
     },
     {
       "id": "47c19969b4fd4a79b6bab2b20ca224ce97a11abad3f129b210b48d8da22cda4c",
+      "shortId": "47c19969",
       "displayName": "Tree Cocos Nucifera LowPoly",
       "slug": "tre_ccs_ncf_lwp",
       "type": "asset",
@@ -173,10 +225,14 @@
       "relDir": "Assets/Nature/tre_ccs_ncf_lwp_47c19969",
       "thumb": "Assets/Nature/tre_ccs_ncf_lwp_47c19969/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
       "updated": "2025-08-13"
     },
     {
       "id": "6bc0d25f8937cff7504d4ed251f4b38b732ad5a8962cdc38f353628a3f7eafd6",
+      "shortId": "6bc0d25f",
       "displayName": "Tree Cocos Nucifera LowPoly",
       "slug": "tre_ccs_ncf_lwp",
       "type": "asset",
@@ -196,10 +252,14 @@
       "relDir": "Assets/Nature/tre_ccs_ncf_lwp_6bc0d25f",
       "thumb": "Assets/Nature/tre_ccs_ncf_lwp_6bc0d25f/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
       "updated": "2025-08-13"
     },
     {
       "id": "785c60f8ef467a30e46062fa98dbb6e6b73c6f518122a171a9df9755cd7d5329",
+      "shortId": "785c60f8",
       "displayName": "Tree Cocos Nucifera LowPoly",
       "slug": "tre_ccs_ncf_lwp",
       "type": "asset",
@@ -219,10 +279,14 @@
       "relDir": "Assets/Nature/tre_ccs_ncf_lwp_785c60f8",
       "thumb": "Assets/Nature/tre_ccs_ncf_lwp_785c60f8/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
       "updated": "2025-08-13"
     },
     {
       "id": "c26c26b9cf04ad05d5a2e9f13eb9c6a9e9d2668c7a56c3fb6a1544b671b2941d",
+      "shortId": "c26c26b9",
       "displayName": "Tree Cocos Nucifera LowPoly",
       "slug": "tre_ccs_ncf_lwp",
       "type": "asset",
@@ -242,10 +306,14 @@
       "relDir": "Assets/Nature/tre_ccs_ncf_lwp_c26c26b9",
       "thumb": "Assets/Nature/tre_ccs_ncf_lwp_c26c26b9/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
       "updated": "2025-08-13"
     },
     {
       "id": "6a67b9281cb663406f879238931ada932a06bb013ae37b6973f560af8d8e299c",
+      "shortId": "6a67b928",
       "displayName": "Tree CocosNucifera Dry Leaf",
       "slug": "tre_coc_dry_lef",
       "type": "material",
@@ -264,10 +332,14 @@
       "relDir": "materials/Vegetation/tre_coc_dry_lef_6a67b928",
       "thumb": "materials/Vegetation/tre_coc_dry_lef_6a67b928/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
       "updated": "2025-08-13"
     },
     {
       "id": "1fb77eb7ffd20dc4943933056ba49fbeb3f1e25bb6531a4a61815cdbea260dfa",
+      "shortId": "1fb77eb7",
       "displayName": "Tree CocosNucifera Leaf",
       "slug": "tre_coc_lef",
       "type": "material",
@@ -285,10 +357,14 @@
       "relDir": "materials/Vegetation/tre_coc_lef_1fb77eb7",
       "thumb": "materials/Vegetation/tre_coc_lef_1fb77eb7/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
       "updated": "2025-08-13"
     },
     {
       "id": "5db190fae15bdaa128a4a0e2c936d9895886f38390d98097309f8e12eab190e1",
+      "shortId": "5db190fa",
       "displayName": "Tree CocosNucifera Lowpoly Leaves",
       "slug": "tre_coc_low_lea",
       "type": "material",
@@ -310,10 +386,14 @@
       "relDir": "materials/Vegetation/tre_coc_low_lea_5db190fa",
       "thumb": "materials/Vegetation/tre_coc_low_lea_5db190fa/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
       "updated": "2025-08-13"
     },
     {
       "id": "91426e2b6a406e000aa03f65f08a6cb11574ee94b20501978727b322c21d82e5",
+      "shortId": "91426e2b",
       "displayName": "Tree CocosNucifera LowPoly Trunk",
       "slug": "tre_coc_low_trk",
       "type": "material",
@@ -335,10 +415,14 @@
       "relDir": "materials/Vegetation/tre_coc_low_trk_91426e2b",
       "thumb": "materials/Vegetation/tre_coc_low_trk_91426e2b/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
       "updated": "2025-08-13"
     },
     {
       "id": "53e9974f8d255aceab245abe30a167bfde8962c7c3510824f4adc7cd41e8e127",
+      "shortId": "53e9974f",
       "displayName": "Tree CocosNucifera Stalk",
       "slug": "tre_coc_stk",
       "type": "material",
@@ -356,10 +440,14 @@
       "relDir": "materials/Vegetation/tre_coc_stk_53e9974f",
       "thumb": "materials/Vegetation/tre_coc_stk_53e9974f/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
       "updated": "2025-08-13"
     },
     {
       "id": "bde9c2fc2f90d25988119d39fa5bd5e3b5e0d237b539308d0599728d2a492ba4",
+      "shortId": "bde9c2fc",
       "displayName": "Tree CocosNucifera Trunk",
       "slug": "tre_coc_trk",
       "type": "material",
@@ -378,10 +466,14 @@
       "relDir": "materials/Vegetation/tre_coc_trk_bde9c2fc",
       "thumb": "materials/Vegetation/tre_coc_trk_bde9c2fc/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
       "updated": "2025-08-13"
     },
     {
       "id": "cc37a36e08df2776f59308268b1e78fcca2bcf8526a2a3b4a6af14f787bcb8dd",
+      "shortId": "cc37a36e",
       "displayName": "Tree Ficus Macrophylla",
       "slug": "tre_fcs_mcr",
       "type": "asset",
@@ -394,10 +486,14 @@
       "relDir": "Assets/Nature/tre_fcs_mcr_cc37a36e",
       "thumb": "Assets/Nature/tre_fcs_mcr_cc37a36e/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
       "updated": "2025-08-13"
     },
     {
       "id": "dcbf6ac5bddf16ea8b49875e1645e2432aa7fab3cf424dcc0e2446230b4d6c2e",
+      "shortId": "dcbf6ac5",
       "displayName": "Tree Ficus Macrophylla",
       "slug": "tre_fcs_mcr",
       "type": "asset",
@@ -410,10 +506,14 @@
       "relDir": "Assets/Nature/tre_fcs_mcr_dcbf6ac5",
       "thumb": "Assets/Nature/tre_fcs_mcr_dcbf6ac5/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
       "updated": "2025-08-13"
     },
     {
       "id": "995f42624ab4407dc77aa11a0cb700d2b10fe4cd95a0d6109f88db27149e87b5",
+      "shortId": "995f4262",
       "displayName": "Tree Ficus Macrophylla Leaf",
       "slug": "tre_fcs_mcr_laf",
       "type": "material",
@@ -427,10 +527,14 @@
       "relDir": "materials/Vegetation/tre_fcs_mcr_laf_995f4262",
       "thumb": "materials/Vegetation/tre_fcs_mcr_laf_995f4262/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
       "updated": "2025-08-13"
     },
     {
       "id": "8236cd2d9dc204f2fdaaf1cd446f9444e67726b8ae1742835413a18234bba16e",
+      "shortId": "8236cd2d",
       "displayName": "Tree Ficus Macrophylla Trunk",
       "slug": "tre_fcs_mcr_trk",
       "type": "material",
@@ -444,6 +548,9 @@
       "relDir": "materials/Vegetation/tre_fcs_mcr_trk_8236cd2d",
       "thumb": "materials/Vegetation/tre_fcs_mcr_trk_8236cd2d/v001/previews/preview_01_512.jpg",
       "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
       "updated": "2025-08-13"
     }
   ]
