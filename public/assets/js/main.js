@@ -273,26 +273,53 @@ async function openDetail(asset) {
   el.drawerTitle.textContent = asset.displayName;
   el.drawerBody.innerHTML = '<div class="small text-muted">Loading metadata…</div>';
   el.drawer.classList.add('open');
-  // In real impl, fetch full asset_info.json here
-  setTimeout(() => {
-    el.drawerBody.innerHTML = detailTemplate(asset);
-    const dirBtn = document.getElementById('openDirBtn');
-    if (dirBtn) {
-      dirBtn.addEventListener('click', async () => {
-        dirBtn.disabled = true;
-        try {
-            const sel = document.getElementById('versionSelect');
-            let rel = dirBtn.dataset.rel;
-            const chosen = sel ? sel.value : null;
-            if (chosen) {
-              const folder = /^v\d{3}$/i.test(chosen) ? chosen.toLowerCase() : ('v'+chosen.toLowerCase());
-              if (!rel.toLowerCase().endsWith('/'+folder)) rel = rel + '/' + folder;
-            }
-            await fetch(`/api/openDir?rel=${encodeURIComponent(rel)}`);
-        } finally { dirBtn.disabled = false; }
-      });
+  // Fetch full asset_info.json to enrich details (materials, versions, etc.)
+  try {
+    if (asset.relDir) {
+      const res = await fetch('/' + asset.relDir + '/asset_info.json');
+      if (res.ok) {
+        const full = await res.json();
+        asset._fullMeta = full;
+      }
     }
-  }, 100); // simulate latency
+  } catch(e){ /* ignore, fallback to minimal */ }
+  el.drawerBody.innerHTML = detailTemplate(asset);
+  const dirBtn = document.getElementById('openDirBtn');
+  if (dirBtn) {
+    dirBtn.addEventListener('click', async () => {
+      dirBtn.disabled = true;
+      try {
+          const sel = document.getElementById('versionSelect');
+          let rel = dirBtn.dataset.rel;
+          const chosen = sel ? sel.value : null;
+          if (chosen) {
+            const folder = /^v\d{3}$/i.test(chosen) ? chosen.toLowerCase() : ('v'+chosen.toLowerCase());
+            if (!rel.toLowerCase().endsWith('/'+folder)) rel = rel + '/' + folder;
+          }
+          await fetch(`/api/openDir?rel=${encodeURIComponent(rel)}`);
+      } finally { dirBtn.disabled = false; }
+    });
+  }
+  // Wire browse buttons for materials
+    document.querySelectorAll('.mat-browse').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        btn.disabled = true;
+        try { await fetch(`/api/openDir?rel=${encodeURIComponent(btn.dataset.rel)}`); }
+        finally { btn.disabled = false; }
+      });
+    });
+    // Wire ID copy button
+    document.querySelectorAll('.id-copy-btn').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const idVal = btn.dataset.id;
+        if (!idVal) return;
+        try { await navigator.clipboard.writeText(idVal); } catch(e) { /* ignore */ }
+        const orig = btn.textContent;
+        btn.textContent = 'Copied';
+        btn.classList.add('copied');
+        setTimeout(()=> { btn.textContent = orig; btn.classList.remove('copied'); }, 900);
+      });
+    });
 }
 
 function detailTemplate(a) {
@@ -308,28 +335,67 @@ function detailTemplate(a) {
   const versions = a.versions && a.versions.length ? [...a.versions] : (a.latestVersion ? [a.latestVersion] : []);
   const sortedVersions = versions.sort((x,y)=> y.localeCompare(x,undefined,{numeric:true,sensitivity:'base'}));
   const versionSelect = sortedVersions.length ? `<div class="meta-tile"><span class="meta-label">Version</span><div class="version-select"><select id="versionSelect">${sortedVersions.map(v=>`<option value="${v}">${v}</option>`).join('')}</select></div></div>` : '';
-  return `<div class="detail-body-inner">
-    <div class="preview-shell">${a.thumb ? `<img src="${a.thumb}" alt="${a.displayName}">` : '<div class=\"text-muted small\">No preview</div>'}</div>
-    <h3 class="mb-1">${a.displayName}</h3>
+
+  // Material listings (only for non-material assets when full meta present)
+  let materialsSection = '';
+  if (a.type !== 'material' && a._fullMeta && Array.isArray(a._fullMeta.versions) && a._fullMeta.versions.length) {
+    const latestFull = a._fullMeta.versions[a._fullMeta.versions.length - 1];
+    const localMats = Array.isArray(latestFull.localMaterials) ? latestFull.localMaterials : [];
+    const sharedMats = Array.isArray(latestFull.sharedMaterials) ? latestFull.sharedMaterials : [];
+    const matRows = [];
+    // Helper to resolve relativePath to directory under library root (strip version folder & filename, normalize ..)
+    function normalizePathFromAsset(relDirAsset, relPath) {
+      if (!relPath) return null;
+      const combined = [...(relDirAsset?relDirAsset.split('/'):[]), ...relPath.split('/')];
+      const stack = [];
+      for (const seg of combined) {
+        if (seg === '' || seg === '.') continue;
+        if (seg === '..') { stack.pop(); continue; }
+        stack.push(seg);
+      }
+      // Remove filename
+      if (stack.length) stack.pop();
+      // If last is version folder like v001 remove it too
+      if (stack.length && /^v\d{3}$/i.test(stack[stack.length-1])) stack.pop();
+      return stack.join('/');
+    }
+    localMats.forEach(m => {
+      // Local materials may only have a name; directory is asset's relDir
+      const dir = relDir || a.relDir;
+      matRows.push(`<div class="mat-row"><span class="mat-name">${m.displayName || m.name || m}</span><span class="badge bg-secondary">Local</span> ${dir?`<button class="btn btn-xs btn-outline-secondary mat-browse" data-rel="${dir}">Browse</button>`:''}</div>`);
+    });
+    sharedMats.forEach(m => {
+      const dir = normalizePathFromAsset(a.relDir, m.relativePath);
+      matRows.push(`<div class="mat-row"><span class="mat-name">${m.displayName || m.name}</span><span class="badge bg-info">Shared</span> ${dir?`<button class="btn btn-xs btn-outline-secondary mat-browse" data-rel="${dir}">Browse</button>`:''}</div>`);
+    });
+    if (matRows.length) {
+      materialsSection = `<div class="divider"></div><div><span class="meta-label" style="margin-bottom:.35rem;">Materials</span><div class="materials-list">${matRows.join('')}</div></div>`;
+    }
+  }
+    return `<div class="detail-body-inner">
+      <div class="sticky-actions no-meta">
+        <div class="sa-buttons">
+          <button class="btn btn-xs btn-primary" disabled>Download (stub)</button>
+          ${openBtn}
+        </div>
+      </div>
+      <div class="preview-shell">${a.thumb ? `<img src="${a.thumb}" alt="${a.displayName}">` : '<div class=\"text-muted small\">No preview</div>'}</div>
+    <div class="title-row"><h3 class="mb-1 mt-2" title="${a.displayName}">${a.displayName}</h3><button type="button" class="id-pill id-copy-btn" data-id="${(a.id||a.shortId)||''}" title="Copy ID ${(a.id||a.shortId)||''}">ID</button></div>
     <div class="small text-muted">${a.category || '—'} • ${a.type || '—'}</div>
-    <div class="divider"></div>
+      <div class="divider"></div>
     <div class="meta-grid">
-      <div class="meta-tile"><span class="meta-label">ID</span><span class="meta-value"><code>${(a.id||a.shortId)||'—'}</code></span></div>
-      <div class="meta-tile"><span class="meta-label">Updated</span><span class="meta-value">${a.updated || '—'}</span></div>
-      <div class="meta-tile"><span class="meta-label">Type</span><span class="meta-value">${a.type||'—'}</span></div>
-      <div class="meta-tile"><span class="meta-label">Category</span><span class="meta-value">${a.category||'—'}</span></div>
-      ${versionSelect}
-    </div>
-    <div class="divider"></div>
-    <div>
-      <span class="meta-label" style="margin-bottom:.35rem;">Tags</span>
-      ${tags}
-    </div>
-    <div class="actions-bar">
-      <button class="btn btn-sm btn-primary" disabled>Download (stub)</button>
-      ${openBtn}
-    </div>
-  </div>`;
+        <div class="meta-tile"><span class="meta-label">Updated</span><span class="meta-value">${a.updated || '—'}</span></div>
+        <div class="meta-tile"><span class="meta-label">Type</span><span class="meta-value">${a.type||'—'}</span></div>
+        <div class="meta-tile"><span class="meta-label">Category</span><span class="meta-value">${a.category||'—'}</span></div>
+        ${versionSelect}
+      </div>
+      <div class="divider"></div>
+      <div>
+        <span class="meta-label" style="margin-bottom:.35rem;">Tags</span>
+        ${tags}
+      </div>
+      ${materialsSection}
+    </div>`;
 }
 
 function closeDetail() { el.drawer.classList.remove('open'); }

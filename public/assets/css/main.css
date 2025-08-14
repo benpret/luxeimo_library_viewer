@@ -111,6 +111,32 @@ h3 { font-size: var(--fs-md); font-weight:600; }
 [data-theme="light"] .detail-drawer .tag { background:#efefef; border-color:#e0e0e0; color:#222; }
 [data-theme="light"] .detail-drawer code { background:#ececec; border-color:#e0e0e0; }
 
+/* Sticky actions header inside drawer body */
+.detail-body .sticky-actions { position:sticky; top:0; z-index:5; display:flex; align-items:center; justify-content:space-between; gap:.75rem; padding:.4rem .4rem .55rem; margin:-.25rem -0.25rem .35rem; background:linear-gradient(180deg,rgba(32,32,32,.95),rgba(32,32,32,.8)); backdrop-filter: blur(12px) saturate(140%); border:1px solid #2a2a2a; border-radius:12px; }
+.detail-body .sticky-actions .sa-title { font-size:var(--fs-md); font-weight:600; margin:0; max-width:220px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.detail-body .sticky-actions .sa-buttons { display:flex; gap:.4rem; flex-wrap:wrap; }
+.detail-body .sticky-actions .btn { font-size:var(--fs-xs); padding:.35rem .65rem .4rem; }
+
+/* Materials list modern styling */
+.materials-list { display:flex; flex-direction:column; gap:.4rem; margin-top:.4rem; }
+.materials-list .mat-row { display:grid; grid-template-columns: 1fr auto auto; align-items:center; gap:.5rem; background:#222; border:1px solid #2e2e2e; padding:.45rem .6rem; border-radius:8px; font-size:var(--fs-sm); }
+.materials-list .mat-name { font-weight:500; letter-spacing:.3px; }
+.materials-list .badge { font-size: var(--fs-xs); font-weight:600; padding:.25rem .5rem; border-radius:14px; letter-spacing:.5px; }
+.materials-list .badge.bg-secondary { background:#444 !important; color:#eee; }
+.materials-list .badge.bg-info { background:var(--accent) !important; color:#111; }
+.materials-list .mat-row .btn { font-size:var(--fs-xs); padding:.3rem .55rem .35rem; }
+.materials-list .mat-row:hover { background:#272727; border-color:#3a3a3a; }
+@media (max-width: 520px) { .detail-body .sticky-actions { flex-direction:column; align-items:flex-start; } }
+
+/* ID copy button styling */
+/* ID pill near title */
+.title-row { display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; }
+.id-pill { background:var(--accent); color:#111; border:none; font-size:var(--fs-xs); font-weight:600; letter-spacing:.6px; padding:.35rem .6rem .4rem; border-radius:20px; cursor:pointer; position:relative; box-shadow:0 0 0 1px rgba(255,255,255,.08),0 2px 6px -2px rgba(0,0,0,.6); }
+.id-pill:hover { filter:brightness(1.05); }
+.id-pill:active { transform:translateY(1px); }
+.id-pill.copied { background:#35d07f; color:#092b18; }
+.id-pill:hover::after { content:attr(title); position:absolute; left:50%; transform:translate(-50%, -110%); top:0; background:#111; color:#eee; padding:.35rem .55rem; border:1px solid #333; font-size:var(--fs-xs); border-radius:6px; white-space:nowrap; z-index:15; }
+
 /* Settings Panel */
 .settings-panel { position: fixed; inset:0; background: rgba(0,0,0,.55); backdrop-filter: blur(4px); display:flex; align-items:flex-start; justify-content:center; padding:4rem 1rem 2rem; z-index:200; }
 .settings-panel.hidden { display:none; }
