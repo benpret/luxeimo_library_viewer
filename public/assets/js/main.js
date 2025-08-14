@@ -320,6 +320,20 @@ async function openDetail(asset) {
         setTimeout(()=> { btn.textContent = orig; btn.classList.remove('copied'); }, 900);
       });
     });
+    // Tag click -> add to search box (avoid duplicates) and apply filters
+    el.drawerBody.querySelectorAll('.tags-wrap .tag').forEach(tagEl => {
+      tagEl.addEventListener('click', () => {
+        const val = tagEl.textContent.trim();
+        if (!val) return;
+        const current = el.searchInput.value.trim();
+        const tokens = current.split(/\s+/).filter(Boolean);
+        if (!tokens.map(t=>t.toLowerCase()).includes(val.toLowerCase())) tokens.push(val);
+        el.searchInput.value = tokens.join(' ');
+        State.filters.query = el.searchInput.value.toLowerCase();
+        applyFilters();
+        el.searchInput.focus();
+      });
+    });
 }
 
 function detailTemplate(a) {
