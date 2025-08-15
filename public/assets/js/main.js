@@ -255,11 +255,21 @@ function createAssetCard(asset) {
   div.setAttribute('type','button');
   div.dataset.id = asset.id || asset.shortId;
   div.tabIndex = 0;
+  const safeName = asset.displayName?.replace(/"/g,'&quot;') || '';
   div.innerHTML = `
-    <div class="asset-thumb-wrapper ${asset.thumb ? '' : 'skeleton'}" title="${asset.displayName}">
-      ${asset.thumb ? `<img loading="lazy" decoding="async" src="${asset.thumb}" alt="${asset.displayName}">` : ''}
+    <div class="asset-thumb-wrapper ${asset.thumb ? '' : 'skeleton'}">
+      ${asset.thumb ? `<img loading="lazy" decoding="async" src="${asset.thumb}" alt="${safeName}">` : ''}
+      ${asset.thumb ? `<div class="thumb-full-btn" role="button" aria-label="Open Full Preview" title="Full Preview">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+      </div>` : ''}
+      <div class="thumb-name-bar" aria-hidden="true">${safeName}</div>
     </div>`;
   div.addEventListener('click', () => openDetail(asset));
+  // Wire full preview button (stop propagation so detail panel doesn't open first)
+  if (asset.thumb) {
+    const btn = div.querySelector('.thumb-full-btn');
+    if (btn) btn.addEventListener('click', e => { e.stopPropagation(); openFullPreview(asset); });
+  }
   return div;
 }
 
