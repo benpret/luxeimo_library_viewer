@@ -334,6 +334,24 @@ async function openDetail(asset) {
         el.searchInput.focus();
       });
     });
+
+    // Dynamic preview aspect: set container aspect-ratio to image's intrinsic ratio to avoid side bars
+    const previewShell = el.drawerBody.querySelector('.preview-shell');
+    const imgEl = previewShell?.querySelector('img');
+    function adjustPreviewRatio() {
+      if (!imgEl || !previewShell) return;
+      const { naturalWidth: w, naturalHeight: h } = imgEl;
+      if (!w || !h) return;
+      const ratio = w / h;
+      // Clamp ratio to sane bounds to prevent extreme layout issues
+      const clamped = Math.min(Math.max(ratio, 0.5), 2.0);
+      // Use rounded precision to reduce layout thrash
+      previewShell.style.aspectRatio = clamped.toFixed(3);
+      previewShell.classList.toggle('square', Math.abs(1 - clamped) < 0.08);
+    }
+    if (imgEl) {
+      if (imgEl.complete) adjustPreviewRatio(); else imgEl.addEventListener('load', adjustPreviewRatio, { once:true });
+    }
 }
 
 function detailTemplate(a) {
@@ -386,6 +404,9 @@ function detailTemplate(a) {
       materialsSection = `<div class="divider"></div><div><span class="meta-label" style="margin-bottom:.35rem;">Materials</span><div class="materials-list">${matRows.join('')}</div></div>`;
     }
   }
+  const imgMarkup = a.thumb ? `<img src="${a.thumb}" alt="${a.displayName}">` : '<div class="text-muted small">No preview</div>';
+  const fullBtn = a.thumb ? `<button type="button" id="fullPreviewBtn" class="preview-expand-btn" title="Open Full Preview" aria-label="Open Full Preview"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></button>` : '';
+  const previewBlock = `<div class="preview-shell">${imgMarkup}${fullBtn}</div>`;
     return `<div class="detail-body-inner">
       <div class="sticky-actions no-meta">
         <div class="sa-buttons">
@@ -393,7 +414,7 @@ function detailTemplate(a) {
           ${openBtn}
         </div>
       </div>
-      <div class="preview-shell">${a.thumb ? `<img src="${a.thumb}" alt="${a.displayName}">` : '<div class=\"text-muted small\">No preview</div>'}</div>
+      ${previewBlock}
     <div class="title-row"><h3 class="mb-1 mt-2" title="${a.displayName}">${a.displayName}</h3><button type="button" class="id-pill id-copy-btn" data-id="${(a.id||a.shortId)||''}" title="Copy ID ${(a.id||a.shortId)||''}">ID</button></div>
     <div class="small text-muted">${a.category || '—'} • ${a.type || '—'}</div>
       <div class="divider"></div>
@@ -452,3 +473,73 @@ function handleGridNavigation(e) {
     focusable[next].focus();
   }
 }
+
+// Full Preview Feature
+function deriveFullPreviewCandidates(asset) {
+  if (!asset.thumb) return [];
+  const t = asset.thumb;
+  const m = t.match(/^(.*\/preview_01)(?:_(\d+))?\.(png|jpe?g|webp)$/i);
+  if (m) {
+    const base = m[1];
+    const ext = m[3];
+    const list = [`${base}.${ext}`];
+    if (ext.toLowerCase() !== 'png') list.push(`${base}.png`);
+    return list;
+  }
+  // Generic fallback: strip _256/_512 before extension
+  const stripped = t.replace(/_(256|512)(?=\.[a-z]+$)/i, '');
+  return [stripped];
+}
+
+function openFullPreview(asset) {
+  const existing = document.getElementById('fullPreviewOverlay');
+  if (existing) existing.remove();
+  const overlay = document.createElement('div');
+  overlay.id = 'fullPreviewOverlay';
+  overlay.className = 'preview-overlay';
+  overlay.innerHTML = `<div class="preview-modal"><button class="close-preview" id="closeFullPreview" aria-label="Close full preview">×</button><div class="preview-img-wrap loading"><div class="spinner small"></div></div></div>`;
+  document.body.appendChild(overlay);
+
+  function close() {
+    overlay.remove();
+    document.removeEventListener('keydown', escHandler);
+  }
+  function escHandler(e){ if (e.key==='Escape') close(); }
+  document.addEventListener('keydown', escHandler);
+  overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+  overlay.querySelector('#closeFullPreview').addEventListener('click', close);
+
+  const wrap = overlay.querySelector('.preview-img-wrap');
+  const candidates = deriveFullPreviewCandidates(asset);
+  if (!candidates.length) {
+    wrap.classList.remove('loading');
+    wrap.innerHTML = '<div class="text-muted small">No preview available</div>';
+    return;
+  }
+  let idx = 0;
+  const img = new Image();
+  img.alt = asset.displayName || 'Preview';
+  img.onload = () => {
+    wrap.classList.remove('loading');
+    wrap.innerHTML = '';
+    wrap.appendChild(img);
+  };
+  img.onerror = () => {
+    idx++;
+    if (idx < candidates.length) {
+      img.src = candidates[idx];
+    } else {
+      wrap.classList.remove('loading');
+      wrap.innerHTML = '<div class="text-danger small">Failed to load full preview</div>';
+    }
+  };
+  img.src = candidates[idx];
+}
+
+// Hook full preview button when detail loads (augment openDetail logic via MutationObserver alternative could be overkill)
+const originalOpenDetail = openDetail;
+openDetail = async function(asset){
+  await originalOpenDetail(asset);
+  const fp = document.getElementById('fullPreviewBtn');
+  if (fp) fp.addEventListener('click', () => openFullPreview(asset));
+};

@@ -1,27 +1,49 @@
 {
   "schemaVersion": 1,
-  "generated": "2025-08-14T11:29:50.087Z",
+  "generated": "2025-08-15T14:11:45.348Z",
   "sourceRoot": "C:\\ImerzaLibrary",
   "prefix": "",
   "items": [
     {
-      "id": "413f69851e3f5f53099950f330e35a931d0da5fd3d55dbca7e594d615181710d",
-      "shortId": "413f6985",
-      "displayName": "Box_Simple",
-      "slug": "box_sim",
-      "type": "asset",
-      "category": "props_external",
+      "id": "2ecbaa67fbdffb9464cc2f814436b83263b1231b8bc0200cad613ab7e2740e84",
+      "shortId": "2ecbaa67",
+      "displayName": "Aluminum",
+      "slug": "alm",
+      "type": "material",
+      "category": "metal",
       "tags": [
-        "box",
-        "simple"
+        "aluminum",
+        "metal"
       ],
-      "relDir": "Assets/Props_External/box_sim_413f6985",
-      "thumb": "Assets/Props_External/box_sim_413f6985/v001/previews/preview_01_512.jpg",
+      "relDir": "materials/metal/alm_2ecbaa67",
+      "thumb": "materials/metal/alm_2ecbaa67/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
       ],
-      "updated": "2025-08-14"
+      "updated": "2025-08-15"
+    },
+    {
+      "id": "0ebeaef43f2f2e238a6b335ed20cb9c0034ee3be3c2f8dbde56d0464082ec541",
+      "shortId": "0ebeaef4",
+      "displayName": "Appliances Stove Top Miele",
+      "slug": "apl_stv_top_mle",
+      "type": "asset",
+      "category": "props_internal",
+      "tags": [
+        "appliances",
+        "stove",
+        "top",
+        "miele",
+        "kitchen"
+      ],
+      "relDir": "Assets/Props_Internal/apl_stv_top_mle_0ebeaef4",
+      "thumb": "Assets/Props_Internal/apl_stv_top_mle_0ebeaef4/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-15"
     },
     {
       "id": "0aa055f8a0a32d962e69e6be1153bfb26d9df4d3dd45450836fc39f9e5df405f",
@@ -38,12 +60,32 @@
         "luxurious"
       ],
       "relDir": "materials/metal/gld_brs_0aa055f8",
-      "thumb": "materials/metal/gld_brs_0aa055f8/v001/previews/preview_01_512.jpg",
+      "thumb": "materials/metal/gld_brs_0aa055f8/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
       ],
       "updated": "2025-08-13"
+    },
+    {
+      "id": "c87c0592831ce180c92097c106328248aac6a8c596d8c56d12cd9b0eeec2ef4c",
+      "shortId": "c87c0592",
+      "displayName": "Iron rough",
+      "slug": "irn_rgh",
+      "type": "material",
+      "category": "metal",
+      "tags": [
+        "iron",
+        "rough",
+        "metal"
+      ],
+      "relDir": "materials/metal/irn_rgh_c87c0592",
+      "thumb": "materials/metal/irn_rgh_c87c0592/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-15"
     },
     {
       "id": "397419995d4756ba299b05fee7a74d91484524854ea3247b1115b87f642749c0",
@@ -57,7 +99,7 @@
         "tsc"
       ],
       "relDir": "Assets/Furniture/lgn_tsc_39741999",
-      "thumb": "Assets/Furniture/lgn_tsc_39741999/v001/previews/preview_01_512.jpg",
+      "thumb": "Assets/Furniture/lgn_tsc_39741999/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -80,12 +122,32 @@
         "stone"
       ],
       "relDir": "materials/Marble/mrb_mrq_ec6c8fca",
-      "thumb": "materials/Marble/mrb_mrq_ec6c8fca/v001/previews/preview_01_512.jpg",
+      "thumb": "materials/Marble/mrb_mrq_ec6c8fca/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
       ],
       "updated": "2025-08-13"
+    },
+    {
+      "id": "c3ae4ee3c3b7410299bd861b389cfd83",
+      "shortId": "c3ae4ee3",
+      "displayName": "Plastic Generic",
+      "slug": "plc_gnc",
+      "type": "material",
+      "category": "plastic",
+      "tags": [
+        "plastic",
+        "generic",
+        "matte"
+      ],
+      "relDir": "materials/Plastic/plc_gnc_c3ae4ee3",
+      "thumb": "materials/Plastic/plc_gnc_c3ae4ee3/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-15"
     },
     {
       "id": "ea5dec7b0a1bcd6353574e67f1ffbd30e345b83370a16d069c43522f52e5de89",
@@ -99,12 +161,54 @@
         "out"
       ],
       "relDir": "Assets/Furniture/sfa_out_ea5dec7b",
-      "thumb": "Assets/Furniture/sfa_out_ea5dec7b/v001/previews/preview_01_512.jpg",
+      "thumb": "Assets/Furniture/sfa_out_ea5dec7b/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
       ],
       "updated": "2025-08-09"
+    },
+    {
+      "id": "da119989831eec6fb4b7c17fc1acaa81585416c165764ba64879ef0e77b6eca3",
+      "shortId": "da119989",
+      "displayName": "Stainless Steel Brushed",
+      "slug": "sts_stl_brs",
+      "type": "material",
+      "category": "metal",
+      "tags": [
+        "stainless",
+        "steel",
+        "brushed"
+      ],
+      "relDir": "materials/metal/sts_stl_brs_da119989",
+      "thumb": "materials/metal/sts_stl_brs_da119989/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-15"
+    },
+    {
+      "id": "9a27f8b1065945a29257c62400ffd56c",
+      "shortId": "9a27f8b1",
+      "displayName": "Stainless Steel Mirror Brushed",
+      "slug": "sts_stl_mrr_brs",
+      "type": "material",
+      "category": "metal",
+      "tags": [
+        "stainless",
+        "steel",
+        "mirror",
+        "brushed",
+        "metal"
+      ],
+      "relDir": "materials/metal/sts_stl_mrr_brs_9a27f8b1",
+      "thumb": "materials/metal/sts_stl_mrr_brs_9a27f8b1/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-15"
     },
     {
       "id": "be122b74169eb8203c290e8573634373cf7dc11584adea334beca97a72f730da",
@@ -118,7 +222,7 @@
         "out"
       ],
       "relDir": "Assets/Furniture/tbl_dng_set_be122b74",
-      "thumb": "Assets/Furniture/tbl_dng_set_be122b74/v001/previews/preview_01_512.jpg",
+      "thumb": "Assets/Furniture/tbl_dng_set_be122b74/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -144,7 +248,7 @@
         "beach"
       ],
       "relDir": "Assets/Nature/tre_ccs_ncf_99e56dce",
-      "thumb": "Assets/Nature/tre_ccs_ncf_99e56dce/v001/previews/preview_01_512.jpg",
+      "thumb": "Assets/Nature/tre_ccs_ncf_99e56dce/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -170,7 +274,7 @@
         "beach"
       ],
       "relDir": "Assets/Nature/tre_ccs_ncf_9b3f916b",
-      "thumb": "Assets/Nature/tre_ccs_ncf_9b3f916b/v001/previews/preview_01_512.jpg",
+      "thumb": "Assets/Nature/tre_ccs_ncf_9b3f916b/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -196,7 +300,7 @@
         "beach"
       ],
       "relDir": "Assets/Nature/tre_ccs_ncf_b274f346",
-      "thumb": "Assets/Nature/tre_ccs_ncf_b274f346/v001/previews/preview_01_512.jpg",
+      "thumb": "Assets/Nature/tre_ccs_ncf_b274f346/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -223,7 +327,7 @@
         "beach"
       ],
       "relDir": "Assets/Nature/tre_ccs_ncf_lwp_47c19969",
-      "thumb": "Assets/Nature/tre_ccs_ncf_lwp_47c19969/v001/previews/preview_01_512.jpg",
+      "thumb": "Assets/Nature/tre_ccs_ncf_lwp_47c19969/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -250,7 +354,7 @@
         "beach"
       ],
       "relDir": "Assets/Nature/tre_ccs_ncf_lwp_6bc0d25f",
-      "thumb": "Assets/Nature/tre_ccs_ncf_lwp_6bc0d25f/v001/previews/preview_01_512.jpg",
+      "thumb": "Assets/Nature/tre_ccs_ncf_lwp_6bc0d25f/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -277,7 +381,7 @@
         "beach"
       ],
       "relDir": "Assets/Nature/tre_ccs_ncf_lwp_785c60f8",
-      "thumb": "Assets/Nature/tre_ccs_ncf_lwp_785c60f8/v001/previews/preview_01_512.jpg",
+      "thumb": "Assets/Nature/tre_ccs_ncf_lwp_785c60f8/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -304,7 +408,7 @@
         "beach"
       ],
       "relDir": "Assets/Nature/tre_ccs_ncf_lwp_c26c26b9",
-      "thumb": "Assets/Nature/tre_ccs_ncf_lwp_c26c26b9/v001/previews/preview_01_512.jpg",
+      "thumb": "Assets/Nature/tre_ccs_ncf_lwp_c26c26b9/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -330,7 +434,7 @@
         "coconut"
       ],
       "relDir": "materials/Vegetation/tre_coc_dry_lef_6a67b928",
-      "thumb": "materials/Vegetation/tre_coc_dry_lef_6a67b928/v001/previews/preview_01_512.jpg",
+      "thumb": "materials/Vegetation/tre_coc_dry_lef_6a67b928/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -355,7 +459,7 @@
         "coconut"
       ],
       "relDir": "materials/Vegetation/tre_coc_lef_1fb77eb7",
-      "thumb": "materials/Vegetation/tre_coc_lef_1fb77eb7/v001/previews/preview_01_512.jpg",
+      "thumb": "materials/Vegetation/tre_coc_lef_1fb77eb7/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -384,7 +488,7 @@
         "beach"
       ],
       "relDir": "materials/Vegetation/tre_coc_low_lea_5db190fa",
-      "thumb": "materials/Vegetation/tre_coc_low_lea_5db190fa/v001/previews/preview_01_512.jpg",
+      "thumb": "materials/Vegetation/tre_coc_low_lea_5db190fa/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -413,7 +517,7 @@
         "beach"
       ],
       "relDir": "materials/Vegetation/tre_coc_low_trk_91426e2b",
-      "thumb": "materials/Vegetation/tre_coc_low_trk_91426e2b/v001/previews/preview_01_512.jpg",
+      "thumb": "materials/Vegetation/tre_coc_low_trk_91426e2b/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -438,7 +542,7 @@
         "coconut"
       ],
       "relDir": "materials/Vegetation/tre_coc_stk_53e9974f",
-      "thumb": "materials/Vegetation/tre_coc_stk_53e9974f/v001/previews/preview_01_512.jpg",
+      "thumb": "materials/Vegetation/tre_coc_stk_53e9974f/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -464,7 +568,7 @@
         "bark"
       ],
       "relDir": "materials/Vegetation/tre_coc_trk_bde9c2fc",
-      "thumb": "materials/Vegetation/tre_coc_trk_bde9c2fc/v001/previews/preview_01_512.jpg",
+      "thumb": "materials/Vegetation/tre_coc_trk_bde9c2fc/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -484,7 +588,7 @@
         "macrophylla"
       ],
       "relDir": "Assets/Nature/tre_fcs_mcr_cc37a36e",
-      "thumb": "Assets/Nature/tre_fcs_mcr_cc37a36e/v001/previews/preview_01_512.jpg",
+      "thumb": "Assets/Nature/tre_fcs_mcr_cc37a36e/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -504,7 +608,7 @@
         "macrophylla"
       ],
       "relDir": "Assets/Nature/tre_fcs_mcr_dcbf6ac5",
-      "thumb": "Assets/Nature/tre_fcs_mcr_dcbf6ac5/v001/previews/preview_01_512.jpg",
+      "thumb": "Assets/Nature/tre_fcs_mcr_dcbf6ac5/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -525,7 +629,7 @@
         "leaf"
       ],
       "relDir": "materials/Vegetation/tre_fcs_mcr_laf_995f4262",
-      "thumb": "materials/Vegetation/tre_fcs_mcr_laf_995f4262/v001/previews/preview_01_512.jpg",
+      "thumb": "materials/Vegetation/tre_fcs_mcr_laf_995f4262/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -546,7 +650,7 @@
         "trunk"
       ],
       "relDir": "materials/Vegetation/tre_fcs_mcr_trk_8236cd2d",
-      "thumb": "materials/Vegetation/tre_fcs_mcr_trk_8236cd2d/v001/previews/preview_01_512.jpg",
+      "thumb": "materials/Vegetation/tre_fcs_mcr_trk_8236cd2d/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
