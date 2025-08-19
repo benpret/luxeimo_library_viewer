@@ -4,15 +4,16 @@ import { VirtualGrid } from './virtual-grid.js';
 const State = {
   items: [],
   filtered: [],
-  categories: new Set(),
   types: new Set(),
-  filters: { categories: new Set(), types: new Set(), query: '', sort: 'name', semantic: false },
+  filters: { types: new Set(), query: '', sort: 'name', semantic: false },
   indexLoaded: false,
+  folderTree: null,
+  currentFolder: '', // path prefix filter (relDir startsWith)
 };
 
 const el = {
   searchInput: document.getElementById('searchInput') || null,
-  categoryFilters: document.getElementById('categoryFilters') || null,
+  categoryFilters: document.getElementById('categoryFilters') || null, // repurposed as folder tree container
   typeFilters: document.getElementById('typeFilters') || null,
   sortSelect: document.getElementById('sortSelect') || null,
   statusBar: document.getElementById('statusBar') || { textContent:'' },
@@ -158,9 +159,11 @@ async function loadIndexRoot() {
     // For prototype, root already contains items (mock). Real impl: multiple shards.
     State.items = root.items || [];
     State.indexLoaded = true;
-    buildFacetSets();
-    buildQuickFilters();
-    renderFacetFilters();
+  buildFacetSets();
+  buildFolderTree(); // sets State.folderTree for folder navigation
+  buildQuickFilters();
+  renderFolderTree();
+  renderFacetFilters(); // only renders legacy category checkboxes if no folder tree
     applyFilters();
     const dur = (performance.now() - start).toFixed(1);
     const rootInfo = root.sourceRoot ? ` | Src: ${truncatePath(root.sourceRoot)}` : '';
@@ -177,18 +180,111 @@ async function loadIndexRoot() {
 }
 
 function buildFacetSets() {
-  State.categories.clear();
   State.types.clear();
+  for (const it of State.items) if (it.type) State.types.add(it.type);
+}
+
+// ---------------- Folder Tree ----------------
+function buildFolderTree() {
+  // Build hierarchical directory structure from relDir segments, EXCLUDING final asset folder
+  const root = { name: 'root', path: '', children: new Map(), depth:0, count:0 };
   for (const it of State.items) {
-    if (it.category) State.categories.add(it.category);
-    if (it.type) State.types.add(it.type);
+    if (!it.relDir) continue;
+    const segments = it.relDir.split('/');
+    if (segments.length < 2) continue; // skip assets with no parent folder depth
+    const upTo = segments.slice(0, -1); // drop last asset folder segment
+    let node = root; let accum = '';
+    for (const seg of upTo) {
+      accum = accum ? accum + '/' + seg : seg;
+      if (!node.children.has(seg)) node.children.set(seg, { name: seg, path: accum, children: new Map(), depth: node.depth+1, count:0 });
+      node = node.children.get(seg);
+    }
   }
+  // Second pass: accumulate counts (number of assets whose relDir is under each folder path)
+  for (const it of State.items) {
+    if (!it.relDir) continue;
+    const segments = it.relDir.split('/');
+    if (segments.length < 2) continue;
+    const upTo = segments.slice(0,-1);
+    let accum=''; let node = root;
+    for (const seg of upTo) {
+      accum = accum ? accum + '/' + seg : seg;
+      const child = node.children.get(seg);
+      if (!child) break; // safety
+      child.count++;
+      node = child;
+    }
+    root.count++; // total asset count reference (if needed)
+  }
+  State.folderTree = root;
+}
+
+function renderFolderTree() {
+  if (!el.categoryFilters) return;
+  const container = el.categoryFilters;
+  // Clear previous content & detach old listeners by cloning
+  const clone = container.cloneNode(false);
+  container.parentNode.replaceChild(clone, container);
+  el.categoryFilters = clone;
+  const containerRef = el.categoryFilters;
+  containerRef.innerHTML = '';
+  const treeEl = document.createElement('div');
+  treeEl.className = 'folder-tree';
+
+  function createNodeEl(node) {
+    if (node.name === 'root') {
+      const rootEl = document.createElement('div');
+      rootEl.className = 'ft-root';
+      rootEl.innerHTML = `<div class="ft-node ft-all ${State.currentFolder?'':'active'}" data-path="">All Folders</div>`;
+      node.children && [...node.children.values()].sort((a,b)=> a.name.localeCompare(b.name,undefined,{sensitivity:'base'})).forEach(ch=> rootEl.appendChild(createNodeEl(ch)));
+      return rootEl;
+    }
+    const hasChildren = node.children && node.children.size>0;
+    const wrapper = document.createElement('div');
+    wrapper.className = 'ft-branch collapsed'; // start collapsed
+    const isActive = State.currentFolder === node.path;
+    wrapper.innerHTML = `
+      <div class="ft-node ${hasChildren?'has-children':''} ${isActive?'active':''}" data-path="${node.path}" title="${node.path}">
+        ${hasChildren?'<span class="ft-expander" aria-hidden="true"></span>':'<span class="ft-leaf-dot" aria-hidden="true"></span>'}
+        <span class="ft-label">${node.name}</span>
+        <span class="ft-count" aria-label="${node.count} items">${node.count}</span>
+      </div>`;
+    if (hasChildren) {
+      const kids = document.createElement('div');
+      kids.className = 'ft-children';
+      [...node.children.values()].sort((a,b)=> a.name.localeCompare(b.name,undefined,{sensitivity:'base'})).forEach(ch=> kids.appendChild(createNodeEl(ch)));
+      wrapper.appendChild(kids);
+    }
+    return wrapper;
+  }
+
+  treeEl.appendChild(createNodeEl(State.folderTree));
+  containerRef.appendChild(treeEl);
+
+  // Event delegation
+  containerRef.addEventListener('click', e => {
+    const expander = e.target.closest('.ft-expander');
+    const nodeEl = e.target.closest('.ft-node');
+    if (!nodeEl) return;
+    if (expander) { nodeEl.parentElement.classList.toggle('collapsed'); return; }
+    // If clicked node has children, toggle expand instead of filtering when modifier not held
+    if (nodeEl.parentElement?.classList.contains('ft-branch') && nodeEl.parentElement.querySelector('.ft-children')) {
+      if (!e.altKey && !e.metaKey && !e.ctrlKey && nodeEl.dataset.path) {
+        nodeEl.parentElement.classList.toggle('collapsed');
+      }
+    }
+    const path = nodeEl.dataset.path || '';
+    State.currentFolder = (State.currentFolder === path) ? '' : path;
+    applyFilters();
+    // Update active classes
+    containerRef.querySelectorAll('.ft-node').forEach(n=> n.classList.toggle('active', n.dataset.path===State.currentFolder || (!State.currentFolder && n.classList.contains('ft-all'))));
+  }, { once:false });
 }
 
 function buildQuickFilters() {
   if (!el.quickFilters) return;
   const chips = [
-    { id:'all', label:'All', action: () => { State.filters.categories.clear(); State.filters.types.clear(); applyFilters(); highlightChip('all'); } },
+  { id:'all', label:'All', action: () => { State.filters.types.clear(); applyFilters(); highlightChip('all'); } },
     { id:'assets', label:'Assets', action: () => { State.filters.types = new Set(['asset']); applyFilters(); highlightChip('assets'); } },
     { id:'materials', label:'Materials', action: () => { State.filters.types = new Set(['material']); applyFilters(); highlightChip('materials'); } },
     { id:'textures', label:'Textures', action: () => { State.filters.types = new Set(['texture']); applyFilters(); highlightChip('textures'); } },
@@ -206,39 +302,24 @@ function highlightChip(id) {
   el.quickFilters.querySelectorAll('.qf-chip').forEach(ch => ch.classList.toggle('active', ch.dataset.chip===id));
 }
 
-function renderFacetFilters() {
-  if (el.categoryFilters) {
-    el.categoryFilters.innerHTML = '';
-    [...State.categories].sort().forEach(cat => {
-      const id = `cat-${cat}`;
-      const div = document.createElement('div');
-      div.className = 'form-check form-check-sm';
-      div.innerHTML = `<input class="form-check-input" type="checkbox" id="${id}" data-cat="${cat}"><label class="form-check-label small" for="${id}">${cat}</label>`;
-      div.querySelector('input').addEventListener('change', e => {
-        if (e.target.checked) State.filters.categories.add(cat); else State.filters.categories.delete(cat); applyFilters();
-      });
-      el.categoryFilters.appendChild(div);
-    });
-  }
-  if (el.typeFilters) {
-    el.typeFilters.innerHTML = '';
-    [...State.types].sort().forEach(type => {
-      const id = `type-${type}`;
-      const div = document.createElement('div');
-      div.className = 'form-check form-check-sm';
-      div.innerHTML = `<input class="form-check-input" type="checkbox" id="${id}" data-type="${type}"><label class="form-check-label small" for="${id}">${type}</label>`;
-      div.querySelector('input').addEventListener('change', e => {
-        if (e.target.checked) State.filters.types.add(type); else State.filters.types.delete(type); applyFilters();
-      });
-      el.typeFilters.appendChild(div);
-    });
-  }
+function renderFacetFilters() { // only type filters retained (currently none in sidebar)
+  if (!el.typeFilters) return;
+  el.typeFilters.innerHTML='';
+  [...State.types].sort().forEach(type => {
+    const id = `type-${type}`;
+    const div = document.createElement('div');
+    div.className = 'form-check form-check-sm';
+    div.innerHTML = `<input class="form-check-input" type="checkbox" id="${id}" data-type="${type}"><label class="form-check-label small" for="${id}">${type}</label>`;
+    div.querySelector('input').addEventListener('change', e => { if (e.target.checked) State.filters.types.add(type); else State.filters.types.delete(type); applyFilters(); });
+    el.typeFilters.appendChild(div);
+  });
 }
 
 function applyFilters() {
-  const { query, categories, types, sort } = State.filters;
+  const { query, types, sort } = State.filters;
   let list = State.items;
-  if (categories.size) list = list.filter(i => categories.has(i.category));
+  // Folder path filter
+  if (State.currentFolder) list = list.filter(i => i.relDir && i.relDir.startsWith(State.currentFolder));
   if (types.size) list = list.filter(i => types.has(i.type));
   if (query) {
     const tokens = query.split(/\s+/).filter(Boolean);
