@@ -19,10 +19,10 @@
 */
 import { createServer } from 'http';
 import { promises as fsp } from 'fs';
-import { spawn } from 'child_process';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import crypto from 'crypto';
+import { spawn } from 'child_process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -76,24 +76,28 @@ function shouldTryLibrary(urlPath) {
 
 async function handler(req, res, opts) {
   const urlPath = decodeURIComponent(req.url.split('?')[0]);
-  // API endpoint: open directory in OS file explorer
+  // API: open directory
   if (urlPath.startsWith('/api/openDir')) {
-    if (!opts.libraryRoot) { res.writeHead(400, {'Content-Type':'application/json'}); return res.end(JSON.stringify({ error:'libraryRoot not configured'})); }
+    if (!opts.libraryRoot) { res.writeHead(400); return res.end('No libraryRoot configured'); }
     try {
-      const fullUrl = new URL('http://localhost'+req.url);
-      const rel = fullUrl.searchParams.get('rel') || '';
-      if (!rel || !isSafe(rel)) { res.writeHead(400, {'Content-Type':'application/json'}); return res.end(JSON.stringify({ error:'bad rel path'})); }
+      const u = new URL(req.url, 'http://localhost');
+      const rel = (u.searchParams.get('rel')||'').replace(/^\/+/, '');
+      if (!rel || rel.includes('..')) { res.writeHead(400); return res.end('Bad rel'); }
       const abs = path.join(opts.libraryRoot, rel);
-      const normRoot = path.normalize(opts.libraryRoot + path.sep);
-      const normAbs = path.normalize(abs);
-      if (!normAbs.startsWith(normRoot)) { res.writeHead(403, {'Content-Type':'application/json'}); return res.end(JSON.stringify({ error:'outside root'})); }
-      try { const st = await fsp.stat(abs); if (!st.isDirectory()) { res.writeHead(400, {'Content-Type':'application/json'}); return res.end(JSON.stringify({ error:'not a directory'})); } } catch { res.writeHead(404, {'Content-Type':'application/json'}); return res.end(JSON.stringify({ error:'not found'})); }
-      const launch = process.platform === 'win32' ? ['explorer.exe',[abs]] : process.platform === 'darwin' ? ['open',[abs]] : ['xdg-open',[abs]];
-      try { const child = spawn(launch[0], launch[1], { detached:true, stdio:'ignore' }); child.unref(); }
-      catch(e) { res.writeHead(500, {'Content-Type':'application/json'}); return res.end(JSON.stringify({ error:'launch failed', message:e.message })); }
-      res.writeHead(200, {'Content-Type':'application/json'}); return res.end(JSON.stringify({ ok:true }));
-    } catch(e) {
-      res.writeHead(500, {'Content-Type':'application/json'}); return res.end(JSON.stringify({ error:'internal', message:e.message })); }
+      // Ensure path is within root
+      if (!abs.startsWith(path.normalize(opts.libraryRoot))) { res.writeHead(400); return res.end('Out of root'); }
+      // Prefer Windows explorer, else platform alternatives
+      let cmd, args;
+      if (process.platform === 'win32') { cmd = 'explorer'; args = [abs]; }
+      else if (process.platform === 'darwin') { cmd = 'open'; args = [abs]; }
+      else { cmd = 'xdg-open'; args = [abs]; }
+      spawn(cmd, args, { detached:true, stdio:'ignore' }).unref();
+      res.writeHead(200, { 'Content-Type':'application/json'});
+      res.end(JSON.stringify({ ok:true }));
+    } catch (e) {
+      res.writeHead(500); res.end('openDir error');
+    }
+    return;
   }
   // Default file mapping
   let rel = urlPath === '/' ? '/index.html' : urlPath;

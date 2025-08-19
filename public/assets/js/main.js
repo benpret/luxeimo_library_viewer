@@ -11,29 +11,29 @@ const State = {
 };
 
 const el = {
-  searchInput: document.getElementById('searchInput'),
-  categoryFilters: document.getElementById('categoryFilters'),
-  typeFilters: document.getElementById('typeFilters'),
-  sortSelect: document.getElementById('sortSelect'),
-  statusBar: document.getElementById('statusBar'),
-  grid: document.getElementById('virtualGrid'),
-  drawer: document.getElementById('detailDrawer'),
-  drawerBody: document.getElementById('detailBody'),
-  drawerTitle: document.getElementById('detailTitle'),
-  closeDetail: document.getElementById('closeDetail'),
-  toggleTheme: document.getElementById('toggleTheme'),
-  semanticToggle: document.getElementById('semanticToggle'),
-  sidebar: document.getElementById('sidebar'),
-  sidebarToggle: document.getElementById('sidebarToggle'),
-  openSettings: document.getElementById('openSettings'),
-  settingsPanel: document.getElementById('settingsPanel'),
-  closeSettings: document.getElementById('closeSettings'),
-  cancelSettings: document.getElementById('cancelSettings'),
-  settingsForm: document.getElementById('settingsForm'),
-  libraryRootInput: document.getElementById('libraryRootInput'),
-  settingsMessage: document.getElementById('settingsMessage'),
-  quickFilters: document.getElementById('quickFilters'),
-  thumbSizeGroup: document.getElementById('thumbSizeGroup'),
+  searchInput: document.getElementById('searchInput') || null,
+  categoryFilters: document.getElementById('categoryFilters') || null,
+  typeFilters: document.getElementById('typeFilters') || null,
+  sortSelect: document.getElementById('sortSelect') || null,
+  statusBar: document.getElementById('statusBar') || { textContent:'' },
+  grid: document.getElementById('virtualGrid') || null,
+  drawer: document.getElementById('detailDrawer') || { classList: { add(){}, remove(){} } },
+  drawerBody: document.getElementById('detailBody') || { innerHTML:'' },
+  drawerTitle: document.getElementById('detailTitle') || { textContent:'' },
+  closeDetail: document.getElementById('closeDetail') || null,
+  toggleTheme: document.getElementById('toggleTheme') || null,
+  semanticToggle: document.getElementById('semanticToggle') || null,
+  sidebar: document.getElementById('sidebar') || { classList:{ add(){}, remove(){}, toggle(){} } },
+  sidebarToggle: document.getElementById('sidebarToggle') || null,
+  openSettings: document.getElementById('openSettings') || null,
+  settingsPanel: document.getElementById('settingsPanel') || { classList:{ add(){}, remove(){}, contains(){ return false; } } },
+  closeSettings: document.getElementById('closeSettings') || null,
+  cancelSettings: document.getElementById('cancelSettings') || null,
+  settingsForm: document.getElementById('settingsForm') || null,
+  libraryRootInput: document.getElementById('libraryRootInput') || null,
+  settingsMessage: document.getElementById('settingsMessage') || { classList:{ add(){}, remove(){} } },
+  quickFilters: document.getElementById('quickFilters') || null,
+  thumbSizeGroup: document.getElementById('thumbSizeGroup') || null,
 };
 
 // Grid
@@ -137,7 +137,8 @@ function saveSettings() {
 
 function updateStatusSuffix(rootPath) {
   // Append root path (shortened) to status bar for context
-  const base = el.statusBar.textContent.split(' | ')[0];
+  if (!el.statusBar) return;
+  const base = (el.statusBar.textContent||'').split(' | ')[0];
   const short = rootPath.length > 30 ? '…' + rootPath.slice(-28) : rootPath;
   el.statusBar.textContent = `${base} | Root: ${short}`;
 }
@@ -148,8 +149,12 @@ function closeSettings() { el.settingsPanel.classList.add('hidden'); }
 async function loadIndexRoot() {
   try {
     const start = performance.now();
-    const res = await fetch('data/index_root.json');
-    const root = await res.json();
+  const res = await fetch('data/index_root.json', { cache:'no-store' });
+  if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
+  let text = await res.text();
+  let root;
+  try { root = JSON.parse(text); }
+  catch(parseErr) { throw new Error('JSON parse error: ' + parseErr.message + (text.slice(0,40)?' (first chars: '+text.slice(0,120).replace(/\s+/g,' ')+'...)':'')); }
     // For prototype, root already contains items (mock). Real impl: multiple shards.
     State.items = root.items || [];
     State.indexLoaded = true;
@@ -164,8 +169,10 @@ async function loadIndexRoot() {
       el.statusBar.textContent += ' (No assets found - run build_index_from_library script)';
     }
   } catch (err) {
-    console.error(err);
+    console.error('Index load failed:', err);
     el.statusBar.textContent = 'Failed to load index';
+    // Surface brief diagnostic after a short delay
+    setTimeout(()=> { el.statusBar.textContent = 'Failed to load index - ' + (err.message||'error'); }, 400);
   }
 }
 
@@ -200,28 +207,32 @@ function highlightChip(id) {
 }
 
 function renderFacetFilters() {
-  el.categoryFilters.innerHTML = '';
-  [...State.categories].sort().forEach(cat => {
-    const id = `cat-${cat}`;
-    const div = document.createElement('div');
-    div.className = 'form-check form-check-sm';
-    div.innerHTML = `<input class="form-check-input" type="checkbox" id="${id}" data-cat="${cat}"><label class="form-check-label small" for="${id}">${cat}</label>`;
-    div.querySelector('input').addEventListener('change', e => {
-      if (e.target.checked) State.filters.categories.add(cat); else State.filters.categories.delete(cat); applyFilters();
+  if (el.categoryFilters) {
+    el.categoryFilters.innerHTML = '';
+    [...State.categories].sort().forEach(cat => {
+      const id = `cat-${cat}`;
+      const div = document.createElement('div');
+      div.className = 'form-check form-check-sm';
+      div.innerHTML = `<input class="form-check-input" type="checkbox" id="${id}" data-cat="${cat}"><label class="form-check-label small" for="${id}">${cat}</label>`;
+      div.querySelector('input').addEventListener('change', e => {
+        if (e.target.checked) State.filters.categories.add(cat); else State.filters.categories.delete(cat); applyFilters();
+      });
+      el.categoryFilters.appendChild(div);
     });
-    el.categoryFilters.appendChild(div);
-  });
-  el.typeFilters.innerHTML = '';
-  [...State.types].sort().forEach(type => {
-    const id = `type-${type}`;
-    const div = document.createElement('div');
-    div.className = 'form-check form-check-sm';
-    div.innerHTML = `<input class="form-check-input" type="checkbox" id="${id}" data-type="${type}"><label class="form-check-label small" for="${id}">${type}</label>`;
-    div.querySelector('input').addEventListener('change', e => {
-      if (e.target.checked) State.filters.types.add(type); else State.filters.types.delete(type); applyFilters();
+  }
+  if (el.typeFilters) {
+    el.typeFilters.innerHTML = '';
+    [...State.types].sort().forEach(type => {
+      const id = `type-${type}`;
+      const div = document.createElement('div');
+      div.className = 'form-check form-check-sm';
+      div.innerHTML = `<input class="form-check-input" type="checkbox" id="${id}" data-type="${type}"><label class="form-check-label small" for="${id}">${type}</label>`;
+      div.querySelector('input').addEventListener('change', e => {
+        if (e.target.checked) State.filters.types.add(type); else State.filters.types.delete(type); applyFilters();
+      });
+      el.typeFilters.appendChild(div);
     });
-    el.typeFilters.appendChild(div);
-  });
+  }
 }
 
 function applyFilters() {
@@ -259,17 +270,9 @@ function createAssetCard(asset) {
   div.innerHTML = `
     <div class="asset-thumb-wrapper ${asset.thumb ? '' : 'skeleton'}">
       ${asset.thumb ? `<img loading="lazy" decoding="async" src="${asset.thumb}" alt="${safeName}">` : ''}
-      ${asset.thumb ? `<div class="thumb-full-btn" role="button" aria-label="Open Full Preview" title="Full Preview">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
-      </div>` : ''}
       <div class="thumb-name-bar" aria-hidden="true">${safeName}</div>
     </div>`;
   div.addEventListener('click', () => openDetail(asset));
-  // Wire full preview button (stop propagation so detail panel doesn't open first)
-  if (asset.thumb) {
-    const btn = div.querySelector('.thumb-full-btn');
-    if (btn) btn.addEventListener('click', e => { e.stopPropagation(); openFullPreview(asset); });
-  }
   return div;
 }
 
@@ -306,7 +309,15 @@ async function openDetail(asset) {
             const folder = /^v\d{3}$/i.test(chosen) ? chosen.toLowerCase() : ('v'+chosen.toLowerCase());
             if (!rel.toLowerCase().endsWith('/'+folder)) rel = rel + '/' + folder;
           }
-          await fetch(`/api/openDir?rel=${encodeURIComponent(rel)}`);
+          const resp = await fetch(`/api/openDir?rel=${encodeURIComponent(rel)}`);
+          if (!resp.ok) {
+            console.warn('Open directory failed', resp.status, rel);
+            dirBtn.textContent = 'Open Failed';
+            setTimeout(()=> dirBtn.textContent='Open Directory', 1200);
+          } else {
+            dirBtn.textContent = 'Opened';
+            setTimeout(()=> dirBtn.textContent='Open Directory', 800);
+          }
       } finally { dirBtn.disabled = false; }
     });
   }

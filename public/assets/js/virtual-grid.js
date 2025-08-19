@@ -38,6 +38,8 @@ export class VirtualGrid {
 
   setItems(items) {
     this.items = items || [];
+  // Force re-render even if visible window size unchanged (e.g., sorting)
+  this.renderedRange = { start: 0, end: -1 };
     this.computeGeometry();
     this.renderVisible();
   }
