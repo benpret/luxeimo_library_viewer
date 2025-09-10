@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generated": "2025-09-10T19:03:09.570Z",
+  "generated": "2025-09-10T19:32:32.967Z",
   "sourceRoot": "C:\\ImerzaLibrary",
   "prefix": "",
   "items": [
@@ -38,8 +38,8 @@
         "coffee",
         "machine"
       ],
-      "relDir": "3d_models/Props_Internal/apl_aeg_5c28cc54",
-      "thumb": "3d_models/Props_Internal/apl_aeg_5c28cc54/v001/previews/preview_01_512.png",
+      "relDir": "models/Props_Internal/apl_aeg_5c28cc54",
+      "thumb": "models/Props_Internal/apl_aeg_5c28cc54/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -60,8 +60,8 @@
         "miele",
         "kitchen"
       ],
-      "relDir": "3d_models/Props_Internal/apl_stv_top_mle_0ebeaef4",
-      "thumb": "3d_models/Props_Internal/apl_stv_top_mle_0ebeaef4/v001/previews/preview_01_512.png",
+      "relDir": "models/Props_Internal/apl_stv_top_mle_0ebeaef4",
+      "thumb": "models/Props_Internal/apl_stv_top_mle_0ebeaef4/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -79,8 +79,8 @@
         "beach",
         "boulder"
       ],
-      "relDir": "3d_models/Nature/bch_bld_d82ab9b7",
-      "thumb": "3d_models/Nature/bch_bld_d82ab9b7/v001/previews/preview_01_512.png",
+      "relDir": "models/Nature/bch_bld_d82ab9b7",
+      "thumb": "models/Nature/bch_bld_d82ab9b7/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -101,8 +101,8 @@
         "water",
         "sports"
       ],
-      "relDir": "3d_models/Transportation/bot_sal_1808ad61",
-      "thumb": "3d_models/Transportation/bot_sal_1808ad61/v001/previews/preview_01_512.png",
+      "relDir": "models/Transportation/bot_sal_1808ad61",
+      "thumb": "models/Transportation/bot_sal_1808ad61/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -141,8 +141,8 @@
         "water",
         "sports"
       ],
-      "relDir": "3d_models/Transportation/cno_c1b6ebf9",
-      "thumb": "3d_models/Transportation/cno_c1b6ebf9/v001/previews/preview_01_512.png",
+      "relDir": "models/Transportation/cno_c1b6ebf9",
+      "thumb": "models/Transportation/cno_c1b6ebf9/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -161,8 +161,8 @@
         "dining",
         "velvet"
       ],
-      "relDir": "3d_models/Furniture/chr_dng_361cbf96",
-      "thumb": "3d_models/Furniture/chr_dng_361cbf96/v001/previews/preview_01_512.png",
+      "relDir": "models/Furniture/chr_dng_361cbf96",
+      "thumb": "models/Furniture/chr_dng_361cbf96/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -182,8 +182,8 @@
         "brass",
         "worn"
       ],
-      "relDir": "3d_models/Furniture/chr_lly_bb400fa9",
-      "thumb": "3d_models/Furniture/chr_lly_bb400fa9/v001/previews/preview_01_512.png",
+      "relDir": "models/Furniture/chr_lly_bb400fa9",
+      "thumb": "models/Furniture/chr_lly_bb400fa9/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -203,8 +203,8 @@
         "tape",
         "cord"
       ],
-      "relDir": "3d_models/Furniture/chr_mnt_tcp_crd_b73e1c42",
-      "thumb": "3d_models/Furniture/chr_mnt_tcp_crd_b73e1c42/v001/previews/preview_01_512.png",
+      "relDir": "models/Furniture/chr_mnt_tcp_crd_b73e1c42",
+      "thumb": "models/Furniture/chr_mnt_tcp_crd_b73e1c42/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -223,8 +223,8 @@
         "office",
         "eames"
       ],
-      "relDir": "3d_models/Furniture/chr_off_eam_f22811bf",
-      "thumb": "3d_models/Furniture/chr_off_eam_f22811bf/v001/previews/preview_01_512.png",
+      "relDir": "models/Furniture/chr_off_eam_f22811bf",
+      "thumb": "models/Furniture/chr_off_eam_f22811bf/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -242,8 +242,8 @@
         "color",
         "calibrator"
       ],
-      "relDir": "3d_models/Other/clr_clb_04fbe4b6",
-      "thumb": "3d_models/Other/clr_clb_04fbe4b6/v001/previews/preview_01_512.png",
+      "relDir": "models/Other/clr_clb_04fbe4b6",
+      "thumb": "models/Other/clr_clb_04fbe4b6/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -479,8 +479,8 @@
         "muscari",
         "variegata"
       ],
-      "relDir": "3d_models/Nature/grd_lrp_msc_vrg_07d659ee",
-      "thumb": "3d_models/Nature/grd_lrp_msc_vrg_07d659ee/v001/previews/preview_01_512.png",
+      "relDir": "models/Nature/grd_lrp_msc_vrg_07d659ee",
+      "thumb": "models/Nature/grd_lrp_msc_vrg_07d659ee/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -519,8 +519,8 @@
         "beach",
         "boulder"
       ],
-      "relDir": "3d_models/Nature/isl_bch_bld_f96b3ceb",
-      "thumb": "3d_models/Nature/isl_bch_bld_f96b3ceb/v001/previews/preview_01_512.png",
+      "relDir": "models/Nature/isl_bch_bld_f96b3ceb",
+      "thumb": "models/Nature/isl_bch_bld_f96b3ceb/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -539,8 +539,8 @@
         "boat",
         "water"
       ],
-      "relDir": "3d_models/Transportation/jet_61abab38",
-      "thumb": "3d_models/Transportation/jet_61abab38/v001/previews/preview_01_512.png",
+      "relDir": "models/Transportation/jet_61abab38",
+      "thumb": "models/Transportation/jet_61abab38/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -599,8 +599,8 @@
         "lgn",
         "tsc"
       ],
-      "relDir": "3d_models/Furniture/lgn_tsc_39741999",
-      "thumb": "3d_models/Furniture/lgn_tsc_39741999/v001/previews/preview_01_512.png",
+      "relDir": "models/Furniture/lgn_tsc_39741999",
+      "thumb": "models/Furniture/lgn_tsc_39741999/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -701,8 +701,8 @@
         "water",
         "sports"
       ],
-      "relDir": "3d_models/Transportation/mtr_bot_ca8c5737",
-      "thumb": "3d_models/Transportation/mtr_bot_ca8c5737/v001/previews/preview_01_512.png",
+      "relDir": "models/Transportation/mtr_bot_ca8c5737",
+      "thumb": "models/Transportation/mtr_bot_ca8c5737/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -722,8 +722,8 @@
         "rock",
         "formation"
       ],
-      "relDir": "3d_models/Nature/nrd_bch_rck_frm_55fffc03",
-      "thumb": "3d_models/Nature/nrd_bch_rck_frm_55fffc03/v001/previews/preview_01_512.png",
+      "relDir": "models/Nature/nrd_bch_rck_frm_55fffc03",
+      "thumb": "models/Nature/nrd_bch_rck_frm_55fffc03/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -819,8 +819,8 @@
         "rock",
         "granite"
       ],
-      "relDir": "3d_models/Nature/rck_grn_04e1d4db",
-      "thumb": "3d_models/Nature/rck_grn_04e1d4db/v001/previews/preview_01_512.png",
+      "relDir": "models/Nature/rck_grn_04e1d4db",
+      "thumb": "models/Nature/rck_grn_04e1d4db/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -838,8 +838,8 @@
         "rock",
         "granite"
       ],
-      "relDir": "3d_models/Nature/rck_grn_0e850c8a",
-      "thumb": "3d_models/Nature/rck_grn_0e850c8a/v001/previews/preview_01_512.png",
+      "relDir": "models/Nature/rck_grn_0e850c8a",
+      "thumb": "models/Nature/rck_grn_0e850c8a/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -917,8 +917,8 @@
         "boconcept",
         "lounge"
       ],
-      "relDir": "3d_models/Furniture/sfa_boc_794cf0fd",
-      "thumb": "3d_models/Furniture/sfa_boc_794cf0fd/v001/previews/preview_01_512.png",
+      "relDir": "models/Furniture/sfa_boc_794cf0fd",
+      "thumb": "models/Furniture/sfa_boc_794cf0fd/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -936,8 +936,8 @@
         "sfa",
         "out"
       ],
-      "relDir": "3d_models/Furniture/sfa_out_ea5dec7b",
-      "thumb": "3d_models/Furniture/sfa_out_ea5dec7b/v001/previews/preview_01_512.png",
+      "relDir": "models/Furniture/sfa_out_ea5dec7b",
+      "thumb": "models/Furniture/sfa_out_ea5dec7b/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -975,8 +975,8 @@
         "gate",
         "turnstyle"
       ],
-      "relDir": "3d_models/Props_Internal/spd_gte_bce34426",
-      "thumb": "3d_models/Props_Internal/spd_gte_bce34426/v001/previews/preview_01_512.png",
+      "relDir": "models/Props_Internal/spd_gte_bce34426",
+      "thumb": "models/Props_Internal/spd_gte_bce34426/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -1038,8 +1038,8 @@
         "jungle",
         "modern"
       ],
-      "relDir": "3d_models/Furniture/tbl_clg_jng_55ff456f",
-      "thumb": "3d_models/Furniture/tbl_clg_jng_55ff456f/v001/previews/preview_01_512.png",
+      "relDir": "models/Furniture/tbl_clg_jng_55ff456f",
+      "thumb": "models/Furniture/tbl_clg_jng_55ff456f/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -1057,8 +1057,8 @@
         "sfa",
         "out"
       ],
-      "relDir": "3d_models/Furniture/tbl_dng_set_be122b74",
-      "thumb": "3d_models/Furniture/tbl_dng_set_be122b74/v001/previews/preview_01_512.png",
+      "relDir": "models/Furniture/tbl_dng_set_be122b74",
+      "thumb": "models/Furniture/tbl_dng_set_be122b74/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -1077,8 +1077,8 @@
         "albizia",
         "saman"
       ],
-      "relDir": "3d_models/Nature/tre_alb_sam_14c98f5f",
-      "thumb": "3d_models/Nature/tre_alb_sam_14c98f5f/v001/previews/preview_01_512.png",
+      "relDir": "models/Nature/tre_alb_sam_14c98f5f",
+      "thumb": "models/Nature/tre_alb_sam_14c98f5f/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -1103,8 +1103,8 @@
         "summer",
         "beach"
       ],
-      "relDir": "3d_models/Nature/tre_ccs_ncf_99e56dce",
-      "thumb": "3d_models/Nature/tre_ccs_ncf_99e56dce/v001/previews/preview_01_512.png",
+      "relDir": "models/Nature/tre_ccs_ncf_99e56dce",
+      "thumb": "models/Nature/tre_ccs_ncf_99e56dce/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -1129,8 +1129,8 @@
         "summer",
         "beach"
       ],
-      "relDir": "3d_models/Nature/tre_ccs_ncf_9b3f916b",
-      "thumb": "3d_models/Nature/tre_ccs_ncf_9b3f916b/v001/previews/preview_01_512.png",
+      "relDir": "models/Nature/tre_ccs_ncf_9b3f916b",
+      "thumb": "models/Nature/tre_ccs_ncf_9b3f916b/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -1155,8 +1155,8 @@
         "summer",
         "beach"
       ],
-      "relDir": "3d_models/Nature/tre_ccs_ncf_b274f346",
-      "thumb": "3d_models/Nature/tre_ccs_ncf_b274f346/v001/previews/preview_01_512.png",
+      "relDir": "models/Nature/tre_ccs_ncf_b274f346",
+      "thumb": "models/Nature/tre_ccs_ncf_b274f346/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -1182,8 +1182,8 @@
         "summer",
         "beach"
       ],
-      "relDir": "3d_models/Nature/tre_ccs_ncf_lwp_47c19969",
-      "thumb": "3d_models/Nature/tre_ccs_ncf_lwp_47c19969/v001/previews/preview_01_512.png",
+      "relDir": "models/Nature/tre_ccs_ncf_lwp_47c19969",
+      "thumb": "models/Nature/tre_ccs_ncf_lwp_47c19969/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -1209,8 +1209,8 @@
         "summer",
         "beach"
       ],
-      "relDir": "3d_models/Nature/tre_ccs_ncf_lwp_6bc0d25f",
-      "thumb": "3d_models/Nature/tre_ccs_ncf_lwp_6bc0d25f/v001/previews/preview_01_512.png",
+      "relDir": "models/Nature/tre_ccs_ncf_lwp_6bc0d25f",
+      "thumb": "models/Nature/tre_ccs_ncf_lwp_6bc0d25f/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -1236,8 +1236,8 @@
         "summer",
         "beach"
       ],
-      "relDir": "3d_models/Nature/tre_ccs_ncf_lwp_785c60f8",
-      "thumb": "3d_models/Nature/tre_ccs_ncf_lwp_785c60f8/v001/previews/preview_01_512.png",
+      "relDir": "models/Nature/tre_ccs_ncf_lwp_785c60f8",
+      "thumb": "models/Nature/tre_ccs_ncf_lwp_785c60f8/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -1263,8 +1263,8 @@
         "summer",
         "beach"
       ],
-      "relDir": "3d_models/Nature/tre_ccs_ncf_lwp_c26c26b9",
-      "thumb": "3d_models/Nature/tre_ccs_ncf_lwp_c26c26b9/v001/previews/preview_01_512.png",
+      "relDir": "models/Nature/tre_ccs_ncf_lwp_c26c26b9",
+      "thumb": "models/Nature/tre_ccs_ncf_lwp_c26c26b9/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -1443,8 +1443,8 @@
         "ficus",
         "macrophylla"
       ],
-      "relDir": "3d_models/Nature/tre_fcs_mcr_cc37a36e",
-      "thumb": "3d_models/Nature/tre_fcs_mcr_cc37a36e/v001/previews/preview_01_512.png",
+      "relDir": "models/Nature/tre_fcs_mcr_cc37a36e",
+      "thumb": "models/Nature/tre_fcs_mcr_cc37a36e/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -1463,8 +1463,8 @@
         "ficus",
         "macrophylla"
       ],
-      "relDir": "3d_models/Nature/tre_fcs_mcr_dcbf6ac5",
-      "thumb": "3d_models/Nature/tre_fcs_mcr_dcbf6ac5/v001/previews/preview_01_512.png",
+      "relDir": "models/Nature/tre_fcs_mcr_dcbf6ac5",
+      "thumb": "models/Nature/tre_fcs_mcr_dcbf6ac5/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
