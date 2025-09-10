@@ -70,8 +70,9 @@ function isSafe(subPath) { return !subPath.split('\\').some(s => s==='..') && !s
 
 function shouldTryLibrary(urlPath) {
   // Accept common top-level library folders (case-insensitive)
-  // Includes: assets, materials, mats
-  return /^(\/)(assets?|materials?|mats)\//i.test(urlPath);
+  // Includes: assets, materials, mats, and 3d_models (post-rename of Assets)
+  // Add a few common variants to be safe.
+  return /^(\/)(assets?|materials?|mats|3d_models|3d-models|3dmodels)\//i.test(urlPath);
 }
 
 async function handler(req, res, opts) {

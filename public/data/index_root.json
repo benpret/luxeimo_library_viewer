@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generated": "2025-08-19T09:14:02.283Z",
+  "generated": "2025-09-10T19:03:09.570Z",
   "sourceRoot": "C:\\ImerzaLibrary",
   "prefix": "",
   "items": [
@@ -24,6 +24,29 @@
       "updated": "2025-08-15"
     },
     {
+      "id": "5c28cc54e695b4344bf47af95e70fa3e8f9e0deed3c3332087e1555271602800",
+      "shortId": "5c28cc54",
+      "displayName": "Appliances AEG",
+      "slug": "apl_aeg",
+      "type": "asset",
+      "category": "props_internal",
+      "tags": [
+        "appliances",
+        "aeg",
+        "oven",
+        "microwave",
+        "coffee",
+        "machine"
+      ],
+      "relDir": "3d_models/Props_Internal/apl_aeg_5c28cc54",
+      "thumb": "3d_models/Props_Internal/apl_aeg_5c28cc54/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-22"
+    },
+    {
       "id": "0ebeaef43f2f2e238a6b335ed20cb9c0034ee3be3c2f8dbde56d0464082ec541",
       "shortId": "0ebeaef4",
       "displayName": "Appliances Stove Top Miele",
@@ -37,13 +60,389 @@
         "miele",
         "kitchen"
       ],
-      "relDir": "Assets/Props_Internal/apl_stv_top_mle_0ebeaef4",
-      "thumb": "Assets/Props_Internal/apl_stv_top_mle_0ebeaef4/v001/previews/preview_01_512.png",
+      "relDir": "3d_models/Props_Internal/apl_stv_top_mle_0ebeaef4",
+      "thumb": "3d_models/Props_Internal/apl_stv_top_mle_0ebeaef4/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
       ],
       "updated": "2025-08-15"
+    },
+    {
+      "id": "d82ab9b70a8f031f09d50e6d480b02be5356fc036fa95ebfa7872b0a1a54776c",
+      "shortId": "d82ab9b7",
+      "displayName": "Beach Boulder",
+      "slug": "bch_bld",
+      "type": "asset",
+      "category": "nature",
+      "tags": [
+        "beach",
+        "boulder"
+      ],
+      "relDir": "3d_models/Nature/bch_bld_d82ab9b7",
+      "thumb": "3d_models/Nature/bch_bld_d82ab9b7/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-09-09"
+    },
+    {
+      "id": "1808ad61a1dbf26b08fd03506a1fc309fc5f84fa3c36604eb2f9c8fdadb79fe9",
+      "shortId": "1808ad61",
+      "displayName": "Boat Sail",
+      "slug": "bot_sal",
+      "type": "asset",
+      "category": "transportation",
+      "tags": [
+        "boat",
+        "sail",
+        "sailboat",
+        "water",
+        "sports"
+      ],
+      "relDir": "3d_models/Transportation/bot_sal_1808ad61",
+      "thumb": "3d_models/Transportation/bot_sal_1808ad61/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-09-05"
+    },
+    {
+      "id": "1343db6610a7131a58a4352a9e88341778f1e239923258fc5d0461f8fa264187",
+      "shortId": "1343db66",
+      "displayName": "Brass Worn",
+      "slug": "brs_wrn",
+      "type": "material",
+      "category": "metal",
+      "tags": [
+        "brass",
+        "worn"
+      ],
+      "relDir": "materials/metal/brs_wrn_1343db66",
+      "thumb": "materials/metal/brs_wrn_1343db66/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-24"
+    },
+    {
+      "id": "c1b6ebf9697a49af4c2187e3dd67f73c00ee1d2188ffc620c9d6d197714dec17",
+      "shortId": "c1b6ebf9",
+      "displayName": "Canoe",
+      "slug": "cno",
+      "type": "asset",
+      "category": "transportation",
+      "tags": [
+        "canoe",
+        "boat",
+        "water",
+        "sports"
+      ],
+      "relDir": "3d_models/Transportation/cno_c1b6ebf9",
+      "thumb": "3d_models/Transportation/cno_c1b6ebf9/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-09-05"
+    },
+    {
+      "id": "361cbf966575fd7882dde580904252368e1e2071231b949fd05755bb0a764b19",
+      "shortId": "361cbf96",
+      "displayName": "Chair Dining",
+      "slug": "chr_dng",
+      "type": "asset",
+      "category": "furniture",
+      "tags": [
+        "chair",
+        "dining",
+        "velvet"
+      ],
+      "relDir": "3d_models/Furniture/chr_dng_361cbf96",
+      "thumb": "3d_models/Furniture/chr_dng_361cbf96/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-30"
+    },
+    {
+      "id": "bb400fa964630eb710293b5b5b60abdcfcceea34125b9dd59743f3d04726ecac",
+      "shortId": "bb400fa9",
+      "displayName": "Chair Lilly",
+      "slug": "chr_lly",
+      "type": "asset",
+      "category": "furniture",
+      "tags": [
+        "chair",
+        "lilly",
+        "brass",
+        "worn"
+      ],
+      "relDir": "3d_models/Furniture/chr_lly_bb400fa9",
+      "thumb": "3d_models/Furniture/chr_lly_bb400fa9/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-24"
+    },
+    {
+      "id": "b73e1c427daf91f6fbfb93e66f74e6a2f8d0a335036749e29683e9f3770c27e7",
+      "shortId": "b73e1c42",
+      "displayName": "Chair Minotti Tape Cord",
+      "slug": "chr_mnt_tcp_crd",
+      "type": "asset",
+      "category": "furniture",
+      "tags": [
+        "chair",
+        "minotti",
+        "tape",
+        "cord"
+      ],
+      "relDir": "3d_models/Furniture/chr_mnt_tcp_crd_b73e1c42",
+      "thumb": "3d_models/Furniture/chr_mnt_tcp_crd_b73e1c42/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-09-01"
+    },
+    {
+      "id": "f22811bf6aa40678a5627da35aa0d0f3db4111be888cb816956f136b3395027a",
+      "shortId": "f22811bf",
+      "displayName": "Chair Office Eames",
+      "slug": "chr_off_eam",
+      "type": "asset",
+      "category": "furniture",
+      "tags": [
+        "chair",
+        "office",
+        "eames"
+      ],
+      "relDir": "3d_models/Furniture/chr_off_eam_f22811bf",
+      "thumb": "3d_models/Furniture/chr_off_eam_f22811bf/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-09-01"
+    },
+    {
+      "id": "04fbe4b604ce7bcb9f106db63c0954a7834e2ebf8f95dd29a1d460f9c3163933",
+      "shortId": "04fbe4b6",
+      "displayName": "Color Calibrator",
+      "slug": "clr_clb",
+      "type": "asset",
+      "category": "other",
+      "tags": [
+        "color",
+        "calibrator"
+      ],
+      "relDir": "3d_models/Other/clr_clb_04fbe4b6",
+      "thumb": "3d_models/Other/clr_clb_04fbe4b6/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-27"
+    },
+    {
+      "id": "b2329385e4e3461eb0e9218daeca2622",
+      "shortId": "b2329385",
+      "displayName": "Curated Stone Facade",
+      "slug": "crt_stn_fcd",
+      "type": "material",
+      "category": "stone",
+      "tags": [
+        "curated",
+        "stone",
+        "facade"
+      ],
+      "relDir": "materials/Stone/crt_stn_fcd_b2329385",
+      "thumb": "materials/Stone/crt_stn_fcd_b2329385/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-29"
+    },
+    {
+      "id": "4c5847c5b8291d035baf7452e07d6a23516d3ce9b0415f37519974c9544327dc",
+      "shortId": "4c5847c5",
+      "displayName": "Fabric Pattern",
+      "slug": "fab_ptr",
+      "type": "material",
+      "category": "fabric",
+      "tags": [
+        "fabric",
+        "pattern"
+      ],
+      "relDir": "materials/Fabric/fab_ptr_4c5847c5",
+      "thumb": "materials/Fabric/fab_ptr_4c5847c5/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-25"
+    },
+    {
+      "id": "da70462cbb26aa29d86865737a675eeb90202bbd7027ee94ede44937faba6fdb",
+      "shortId": "da70462c",
+      "displayName": "Fabric Pattern",
+      "slug": "fab_ptr",
+      "type": "material",
+      "category": "fabric",
+      "tags": [
+        "fabric",
+        "pattern"
+      ],
+      "relDir": "materials/Fabric/fab_ptr_da70462c",
+      "thumb": "materials/Fabric/fab_ptr_da70462c/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-24"
+    },
+    {
+      "id": "0021f26ca5e49432b1494166db1a416ba86f8468e99e993e15590d7e72bc20d3",
+      "shortId": "0021f26c",
+      "displayName": "Fabric Pattern",
+      "slug": "fbr_ptr",
+      "type": "material",
+      "category": "fabric",
+      "tags": [
+        "fabric",
+        "pattern"
+      ],
+      "relDir": "materials/Fabric/fbr_ptr_0021f26c",
+      "thumb": "materials/Fabric/fbr_ptr_0021f26c/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-24"
+    },
+    {
+      "id": "8010eb2368b224a6cb5cc7589d308182dcb02716a01435b768ee90083c02f3e0",
+      "shortId": "8010eb23",
+      "displayName": "Fabric Pattern",
+      "slug": "fbr_ptr",
+      "type": "material",
+      "category": "fabric",
+      "tags": [
+        "fabric",
+        "pattern"
+      ],
+      "relDir": "materials/Fabric/fbr_ptr_8010eb23",
+      "thumb": "materials/Fabric/fbr_ptr_8010eb23/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-24"
+    },
+    {
+      "id": "a4766b4f71b651f14eca319688c806bf7dd092cdd5cc90aa9d27d0c305666b7b",
+      "shortId": "a4766b4f",
+      "displayName": "Fabric Pattern Floral",
+      "slug": "fbr_ptr_flr",
+      "type": "material",
+      "category": "fabric",
+      "tags": [
+        "fabric",
+        "pattern",
+        "floral"
+      ],
+      "relDir": "materials/Fabric/fbr_ptr_flr_a4766b4f",
+      "thumb": "materials/Fabric/fbr_ptr_flr_a4766b4f/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-24"
+    },
+    {
+      "id": "439d9e3d5e4a4373afd7f36932853c9a",
+      "shortId": "439d9e3d",
+      "displayName": "Fabric Suede Brown",
+      "slug": "fab_sde_brn",
+      "type": "material",
+      "category": "fabric",
+      "tags": [
+        "fabric",
+        "suede",
+        "brown"
+      ],
+      "relDir": "materials/Fabric/fab_sde_brn_439d9e3d",
+      "thumb": "materials/Fabric/fab_sde_brn_439d9e3d/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-29"
+    },
+    {
+      "id": "0e71a2234e0142e9937008c1517a6275",
+      "shortId": "0e71a223",
+      "displayName": "Fabric Suede White",
+      "slug": "fab_sde_wht",
+      "type": "material",
+      "category": "fabric",
+      "tags": [
+        "fabric",
+        "suede",
+        "white"
+      ],
+      "relDir": "materials/Fabric/fab_sde_wht_0e71a223",
+      "thumb": "materials/Fabric/fab_sde_wht_0e71a223/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-29"
+    },
+    {
+      "id": "5ca099df5e5748c9bccf4260879b5e99",
+      "shortId": "5ca099df",
+      "displayName": "Glass Clear",
+      "slug": "gls_clr",
+      "type": "material",
+      "category": "glass",
+      "tags": [
+        "glass",
+        "clear"
+      ],
+      "relDir": "materials/Glass/gls_clr_5ca099df",
+      "thumb": "materials/Glass/gls_clr_5ca099df/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-22"
+    },
+    {
+      "id": "8683f65d7c1247d797cc59e14469d9a6",
+      "shortId": "8683f65d",
+      "displayName": "Glass Dark",
+      "slug": "gls_drk",
+      "type": "material",
+      "category": "glass",
+      "tags": [
+        "glass",
+        "dark"
+      ],
+      "relDir": "materials/Glass/gls_drk_8683f65d",
+      "thumb": "materials/Glass/gls_drk_8683f65d/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-25"
     },
     {
       "id": "0aa055f8a0a32d962e69e6be1153bfb26d9df4d3dd45450836fc39f9e5df405f",
@@ -68,6 +467,27 @@
       "updated": "2025-08-13"
     },
     {
+      "id": "07d659ee8baaaefa5594801e3f8b118ac797696c7a13587f2ca6f0b5e3f237e1",
+      "shortId": "07d659ee",
+      "displayName": "GroundCover Liriope Muscari Variegata",
+      "slug": "grd_lrp_msc_vrg",
+      "type": "asset",
+      "category": "nature",
+      "tags": [
+        "groundcover",
+        "liriope",
+        "muscari",
+        "variegata"
+      ],
+      "relDir": "3d_models/Nature/grd_lrp_msc_vrg_07d659ee",
+      "thumb": "3d_models/Nature/grd_lrp_msc_vrg_07d659ee/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-09-05"
+    },
+    {
       "id": "c87c0592831ce180c92097c106328248aac6a8c596d8c56d12cd9b0eeec2ef4c",
       "shortId": "c87c0592",
       "displayName": "Iron rough",
@@ -88,6 +508,87 @@
       "updated": "2025-08-15"
     },
     {
+      "id": "f96b3ceb77605032e825a2d326d4b947e928f9701465ad137d6442b2bccb414a",
+      "shortId": "f96b3ceb",
+      "displayName": "Islandic Beach Boulder",
+      "slug": "isl_bch_bld",
+      "type": "asset",
+      "category": "nature",
+      "tags": [
+        "islandic",
+        "beach",
+        "boulder"
+      ],
+      "relDir": "3d_models/Nature/isl_bch_bld_f96b3ceb",
+      "thumb": "3d_models/Nature/isl_bch_bld_f96b3ceb/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-09-09"
+    },
+    {
+      "id": "61abab389cf5b2bba0c4afd7a45bc538ab94134938fe3a7f670814b0a8e03459",
+      "shortId": "61abab38",
+      "displayName": "Jetski",
+      "slug": "jet",
+      "type": "asset",
+      "category": "furniture",
+      "tags": [
+        "jetski",
+        "boat",
+        "water"
+      ],
+      "relDir": "3d_models/Transportation/jet_61abab38",
+      "thumb": "3d_models/Transportation/jet_61abab38/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-09-05"
+    },
+    {
+      "id": "53d8a976d5a4e9d1631f6fe03b2dc74a0ae788a4b726ca3a1627bd7313ebdfcf",
+      "shortId": "53d8a976",
+      "displayName": "Leather Saude",
+      "slug": "lth_sde",
+      "type": "material",
+      "category": "leather",
+      "tags": [
+        "leather",
+        "saude",
+        "brass",
+        "worn"
+      ],
+      "relDir": "materials/Leather/lth_sde_53d8a976",
+      "thumb": "materials/Leather/lth_sde_53d8a976/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-24"
+    },
+    {
+      "id": "413203ce16c112268ba80729b35ff50f94e5984e758647a5213a49d43813b0f9",
+      "shortId": "413203ce",
+      "displayName": "Leather Top Grain",
+      "slug": "lth_top_grn",
+      "type": "material",
+      "category": "leather",
+      "tags": [
+        "leather",
+        "top",
+        "grain"
+      ],
+      "relDir": "materials/Leather/lth_top_grn_413203ce",
+      "thumb": "materials/Leather/lth_top_grn_413203ce/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-09-10"
+    },
+    {
       "id": "397419995d4756ba299b05fee7a74d91484524854ea3247b1115b87f642749c0",
       "shortId": "39741999",
       "displayName": "Lounger Tosca",
@@ -98,8 +599,8 @@
         "lgn",
         "tsc"
       ],
-      "relDir": "Assets/Furniture/lgn_tsc_39741999",
-      "thumb": "Assets/Furniture/lgn_tsc_39741999/v001/previews/preview_01_512.png",
+      "relDir": "3d_models/Furniture/lgn_tsc_39741999",
+      "thumb": "3d_models/Furniture/lgn_tsc_39741999/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -130,6 +631,125 @@
       "updated": "2025-08-13"
     },
     {
+      "id": "ac25e95326eebfc521b6cb7672f2290cec58a82a0c54a038d5ba9dca16ee97a3",
+      "shortId": "ac25e953",
+      "displayName": "Marble Orobico",
+      "slug": "mrb_orb",
+      "type": "material",
+      "category": "marble",
+      "tags": [
+        "marble",
+        "orobico",
+        "stone"
+      ],
+      "relDir": "materials/Marble/mrb_orb_ac25e953",
+      "thumb": "materials/Marble/mrb_orb_ac25e953/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-22"
+    },
+    {
+      "id": "1f5cd95acd42132d366af5bfa92569ba64f39fbc8ac07fcfd23cd23b81146ae5",
+      "shortId": "1f5cd95a",
+      "displayName": "Metal Painted Scratched",
+      "slug": "mtl_pnt_sct",
+      "type": "material",
+      "category": "metal",
+      "tags": [
+        "metal",
+        "painted",
+        "scratched"
+      ],
+      "relDir": "materials/metal/mtl_pnt_sct_1f5cd95a",
+      "thumb": "materials/metal/mtl_pnt_sct_1f5cd95a/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-09-05"
+    },
+    {
+      "id": "34c3ed906ee844a2b5f7a26280af20ed",
+      "shortId": "34c3ed90",
+      "displayName": "Mossy Ground",
+      "slug": "msy_grd",
+      "type": "material",
+      "category": "grass",
+      "tags": [
+        "mossy",
+        "ground"
+      ],
+      "relDir": "materials/Grass/msy_grd_34c3ed90",
+      "thumb": "materials/Grass/msy_grd_34c3ed90/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-29"
+    },
+    {
+      "id": "ca8c57373c5cd7da91b6b6d30fc5644d72f00830277649d1754a4f8ff1f96502",
+      "shortId": "ca8c5737",
+      "displayName": "Motorboat",
+      "slug": "mtr_bot",
+      "type": "asset",
+      "category": "transportation",
+      "tags": [
+        "motorboat",
+        "water",
+        "sports"
+      ],
+      "relDir": "3d_models/Transportation/mtr_bot_ca8c5737",
+      "thumb": "3d_models/Transportation/mtr_bot_ca8c5737/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-09-05"
+    },
+    {
+      "id": "55fffc039ea686bbf68a41520995b12ce3058a7aedd9231abe5890e8e2a4e5c9",
+      "shortId": "55fffc03",
+      "displayName": "Nordic Beach Rock Formation",
+      "slug": "nrd_bch_rck_frm",
+      "type": "asset",
+      "category": "nature",
+      "tags": [
+        "nordic",
+        "beach",
+        "rock",
+        "formation"
+      ],
+      "relDir": "3d_models/Nature/nrd_bch_rck_frm_55fffc03",
+      "thumb": "3d_models/Nature/nrd_bch_rck_frm_55fffc03/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-31"
+    },
+    {
+      "id": "32294729a35e43b6be20ba739a79acae",
+      "shortId": "32294729",
+      "displayName": "Plastic Acryl",
+      "slug": "plc_acr",
+      "type": "material",
+      "category": "plastic",
+      "tags": [
+        "plastic",
+        "acryl"
+      ],
+      "relDir": "materials/Plastic/plc_acr_32294729",
+      "thumb": "materials/Plastic/plc_acr_32294729/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-25"
+    },
+    {
       "id": "c3ae4ee3c3b7410299bd861b389cfd83",
       "shortId": "c3ae4ee3",
       "displayName": "Plastic Generic",
@@ -150,6 +770,162 @@
       "updated": "2025-08-15"
     },
     {
+      "id": "61aa867808f825ad8c257b71e508963f7e4604be0de16ce5c5f45e65af27d42c",
+      "shortId": "61aa8678",
+      "displayName": "Plastic Rough",
+      "slug": "plc_rgh",
+      "type": "material",
+      "category": "plastic",
+      "tags": [
+        "plastic",
+        "rough"
+      ],
+      "relDir": "materials/Plastic/plc_rgh_61aa8678",
+      "thumb": "materials/Plastic/plc_rgh_61aa8678/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-09-05"
+    },
+    {
+      "id": "d2c852b315834ef1b0f8df273f2c1811",
+      "shortId": "d2c852b3",
+      "displayName": "Plastic SSS White",
+      "slug": "plc_sss_wht",
+      "type": "material",
+      "category": "plastic",
+      "tags": [
+        "plastic",
+        "sss",
+        "white"
+      ],
+      "relDir": "materials/Plastic/plc_sss_wht_d2c852b3",
+      "thumb": "materials/Plastic/plc_sss_wht_d2c852b3/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-25"
+    },
+    {
+      "id": "04e1d4db24a5ef322e17489ee1c5bbde1a7d0d4da08e649be39cec69c8b1a899",
+      "shortId": "04e1d4db",
+      "displayName": "Rock Granite",
+      "slug": "rck_grn",
+      "type": "asset",
+      "category": "nature",
+      "tags": [
+        "rock",
+        "granite"
+      ],
+      "relDir": "3d_models/Nature/rck_grn_04e1d4db",
+      "thumb": "3d_models/Nature/rck_grn_04e1d4db/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-09-08"
+    },
+    {
+      "id": "0e850c8a8316b0a9e6f577e9c12a23c79033e2bcf106ee7de0a6400ae8cebc38",
+      "shortId": "0e850c8a",
+      "displayName": "Rock Granite",
+      "slug": "rck_grn",
+      "type": "asset",
+      "category": "nature",
+      "tags": [
+        "rock",
+        "granite"
+      ],
+      "relDir": "3d_models/Nature/rck_grn_0e850c8a",
+      "thumb": "3d_models/Nature/rck_grn_0e850c8a/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-09-03"
+    },
+    {
+      "id": "ccf8238b9b6142dc8d6f5f1017c1e36d",
+      "shortId": "ccf8238b",
+      "displayName": "Rubber",
+      "slug": "rbr",
+      "type": "material",
+      "category": "rubber",
+      "tags": [
+        "rubber"
+      ],
+      "relDir": "materials/Rubber/rbr_ccf8238b",
+      "thumb": "materials/Rubber/rbr_ccf8238b/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-25"
+    },
+    {
+      "id": "97bb7b389ed34303b65b67a40c3f7945",
+      "shortId": "97bb7b38",
+      "displayName": "Rusty Painted Metal Sheet",
+      "slug": "rst_pnt_mtl_sht",
+      "type": "material",
+      "category": "metal",
+      "tags": [
+        "rusty",
+        "painted",
+        "metal",
+        "sheet"
+      ],
+      "relDir": "materials/metal/rst_pnt_mtl_sht_97bb7b38",
+      "thumb": "materials/metal/rst_pnt_mtl_sht_97bb7b38/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-29"
+    },
+    {
+      "id": "71e5cef4da624ee892d22ad4c4165d5c",
+      "shortId": "71e5cef4",
+      "displayName": "Silver Sterling",
+      "slug": "slv_str",
+      "type": "material",
+      "category": "metal",
+      "tags": [
+        "silver",
+        "sterling",
+        "metal"
+      ],
+      "relDir": "materials/metal/slv_str_71e5cef4",
+      "thumb": "materials/metal/slv_str_71e5cef4/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-22"
+    },
+    {
+      "id": "794cf0fdbe2a470bb95661bebc299f288894270ea00a4e181ddbba7e20b5f39b",
+      "shortId": "794cf0fd",
+      "displayName": "Sofa BoConcept",
+      "slug": "sfa_boc",
+      "type": "asset",
+      "category": "furniture",
+      "tags": [
+        "sofa",
+        "boconcept",
+        "lounge"
+      ],
+      "relDir": "3d_models/Furniture/sfa_boc_794cf0fd",
+      "thumb": "3d_models/Furniture/sfa_boc_794cf0fd/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-29"
+    },
+    {
       "id": "ea5dec7b0a1bcd6353574e67f1ffbd30e345b83370a16d069c43522f52e5de89",
       "shortId": "ea5dec7b",
       "displayName": "Sofa Outdoor",
@@ -160,13 +936,52 @@
         "sfa",
         "out"
       ],
-      "relDir": "Assets/Furniture/sfa_out_ea5dec7b",
-      "thumb": "Assets/Furniture/sfa_out_ea5dec7b/v001/previews/preview_01_512.png",
+      "relDir": "3d_models/Furniture/sfa_out_ea5dec7b",
+      "thumb": "3d_models/Furniture/sfa_out_ea5dec7b/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
       ],
       "updated": "2025-08-09"
+    },
+    {
+      "id": "decfab85d408eac67680c3b620c0a95f78720a81ce25baf1e7afa7e7eb12925b",
+      "shortId": "decfab85",
+      "displayName": "Soil Mulch",
+      "slug": "sol_mlc",
+      "type": "material",
+      "category": "soil",
+      "tags": [
+        "soil",
+        "mulch"
+      ],
+      "relDir": "materials/Soil/sol_mlc_decfab85",
+      "thumb": "materials/Soil/sol_mlc_decfab85/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-09-09"
+    },
+    {
+      "id": "bce34426a7e5e05be0b671c19578318459074c6ed1ea2876a5344c6b3fa4c45f",
+      "shortId": "bce34426",
+      "displayName": "SpeedGate",
+      "slug": "spd_gte",
+      "type": "3dmodel",
+      "category": "props_internal",
+      "tags": [
+        "speedgate",
+        "gate",
+        "turnstyle"
+      ],
+      "relDir": "3d_models/Props_Internal/spd_gte_bce34426",
+      "thumb": "3d_models/Props_Internal/spd_gte_bce34426/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-09-10"
     },
     {
       "id": "da119989831eec6fb4b7c17fc1acaa81585416c165764ba64879ef0e77b6eca3",
@@ -211,6 +1026,27 @@
       "updated": "2025-08-15"
     },
     {
+      "id": "55ff456fa8fc330eda404c1f079f236c2fb450ec5ea08374bb6db39fe70d6c4a",
+      "shortId": "55ff456f",
+      "displayName": "Table Calligaris Jungle",
+      "slug": "tbl_clg_jng",
+      "type": "asset",
+      "category": "furniture",
+      "tags": [
+        "table",
+        "calligaris",
+        "jungle",
+        "modern"
+      ],
+      "relDir": "3d_models/Furniture/tbl_clg_jng_55ff456f",
+      "thumb": "3d_models/Furniture/tbl_clg_jng_55ff456f/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-22"
+    },
+    {
       "id": "be122b74169eb8203c290e8573634373cf7dc11584adea334beca97a72f730da",
       "shortId": "be122b74",
       "displayName": "Table Dining Set",
@@ -221,13 +1057,33 @@
         "sfa",
         "out"
       ],
-      "relDir": "Assets/Furniture/tbl_dng_set_be122b74",
-      "thumb": "Assets/Furniture/tbl_dng_set_be122b74/v001/previews/preview_01_512.png",
+      "relDir": "3d_models/Furniture/tbl_dng_set_be122b74",
+      "thumb": "3d_models/Furniture/tbl_dng_set_be122b74/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
       ],
       "updated": "2025-08-06"
+    },
+    {
+      "id": "14c98f5f3cd7c2002701fceec8dec8665b8da43e255ff602e70aa17c0cfe464b",
+      "shortId": "14c98f5f",
+      "displayName": "Tree Albizia Saman",
+      "slug": "tre_alb_sam",
+      "type": "asset",
+      "category": "nature",
+      "tags": [
+        "tree",
+        "albizia",
+        "saman"
+      ],
+      "relDir": "3d_models/Nature/tre_alb_sam_14c98f5f",
+      "thumb": "3d_models/Nature/tre_alb_sam_14c98f5f/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-09-02"
     },
     {
       "id": "99e56dce68b2dedb1382271d3d2b7e2e28f477668d6068afb1f9744996cf5394",
@@ -247,8 +1103,8 @@
         "summer",
         "beach"
       ],
-      "relDir": "Assets/Nature/tre_ccs_ncf_99e56dce",
-      "thumb": "Assets/Nature/tre_ccs_ncf_99e56dce/v001/previews/preview_01_512.png",
+      "relDir": "3d_models/Nature/tre_ccs_ncf_99e56dce",
+      "thumb": "3d_models/Nature/tre_ccs_ncf_99e56dce/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -273,8 +1129,8 @@
         "summer",
         "beach"
       ],
-      "relDir": "Assets/Nature/tre_ccs_ncf_9b3f916b",
-      "thumb": "Assets/Nature/tre_ccs_ncf_9b3f916b/v001/previews/preview_01_512.png",
+      "relDir": "3d_models/Nature/tre_ccs_ncf_9b3f916b",
+      "thumb": "3d_models/Nature/tre_ccs_ncf_9b3f916b/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -299,8 +1155,8 @@
         "summer",
         "beach"
       ],
-      "relDir": "Assets/Nature/tre_ccs_ncf_b274f346",
-      "thumb": "Assets/Nature/tre_ccs_ncf_b274f346/v001/previews/preview_01_512.png",
+      "relDir": "3d_models/Nature/tre_ccs_ncf_b274f346",
+      "thumb": "3d_models/Nature/tre_ccs_ncf_b274f346/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -326,8 +1182,8 @@
         "summer",
         "beach"
       ],
-      "relDir": "Assets/Nature/tre_ccs_ncf_lwp_47c19969",
-      "thumb": "Assets/Nature/tre_ccs_ncf_lwp_47c19969/v001/previews/preview_01_512.png",
+      "relDir": "3d_models/Nature/tre_ccs_ncf_lwp_47c19969",
+      "thumb": "3d_models/Nature/tre_ccs_ncf_lwp_47c19969/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -353,8 +1209,8 @@
         "summer",
         "beach"
       ],
-      "relDir": "Assets/Nature/tre_ccs_ncf_lwp_6bc0d25f",
-      "thumb": "Assets/Nature/tre_ccs_ncf_lwp_6bc0d25f/v001/previews/preview_01_512.png",
+      "relDir": "3d_models/Nature/tre_ccs_ncf_lwp_6bc0d25f",
+      "thumb": "3d_models/Nature/tre_ccs_ncf_lwp_6bc0d25f/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -380,8 +1236,8 @@
         "summer",
         "beach"
       ],
-      "relDir": "Assets/Nature/tre_ccs_ncf_lwp_785c60f8",
-      "thumb": "Assets/Nature/tre_ccs_ncf_lwp_785c60f8/v001/previews/preview_01_512.png",
+      "relDir": "3d_models/Nature/tre_ccs_ncf_lwp_785c60f8",
+      "thumb": "3d_models/Nature/tre_ccs_ncf_lwp_785c60f8/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -407,8 +1263,8 @@
         "summer",
         "beach"
       ],
-      "relDir": "Assets/Nature/tre_ccs_ncf_lwp_c26c26b9",
-      "thumb": "Assets/Nature/tre_ccs_ncf_lwp_c26c26b9/v001/previews/preview_01_512.png",
+      "relDir": "3d_models/Nature/tre_ccs_ncf_lwp_c26c26b9",
+      "thumb": "3d_models/Nature/tre_ccs_ncf_lwp_c26c26b9/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -587,8 +1443,8 @@
         "ficus",
         "macrophylla"
       ],
-      "relDir": "Assets/Nature/tre_fcs_mcr_cc37a36e",
-      "thumb": "Assets/Nature/tre_fcs_mcr_cc37a36e/v001/previews/preview_01_512.png",
+      "relDir": "3d_models/Nature/tre_fcs_mcr_cc37a36e",
+      "thumb": "3d_models/Nature/tre_fcs_mcr_cc37a36e/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -607,8 +1463,8 @@
         "ficus",
         "macrophylla"
       ],
-      "relDir": "Assets/Nature/tre_fcs_mcr_dcbf6ac5",
-      "thumb": "Assets/Nature/tre_fcs_mcr_dcbf6ac5/v001/previews/preview_01_512.png",
+      "relDir": "3d_models/Nature/tre_fcs_mcr_dcbf6ac5",
+      "thumb": "3d_models/Nature/tre_fcs_mcr_dcbf6ac5/v001/previews/preview_01_512.png",
       "latestVersion": "001",
       "versions": [
         "001"
@@ -656,6 +1512,104 @@
         "001"
       ],
       "updated": "2025-08-13"
+    },
+    {
+      "id": "05897b273a0ff37bbab4338d6cda1f55bb33aa683c13734728df74952e6bd0ba",
+      "shortId": "05897b27",
+      "displayName": "Velvet",
+      "slug": "vlt",
+      "type": "material",
+      "category": "fabric",
+      "tags": [
+        "velvet",
+        "fabric"
+      ],
+      "relDir": "materials/Fabric/vlt_05897b27",
+      "thumb": "materials/Fabric/vlt_05897b27/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-22"
+    },
+    {
+      "id": "5f52c669ee9c42fe840a393ba8beda04",
+      "shortId": "5f52c669",
+      "displayName": "Velvet White",
+      "slug": "vlt_wht",
+      "type": "material",
+      "category": "fabric",
+      "tags": [
+        "velvet",
+        "white"
+      ],
+      "relDir": "materials/Fabric/vlt_wht_5f52c669",
+      "thumb": "materials/Fabric/vlt_wht_5f52c669/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-31"
+    },
+    {
+      "id": "a8494375c06044dfb644ac9610489e1c",
+      "shortId": "a8494375",
+      "displayName": "Wood Brown",
+      "slug": "wd_bwn",
+      "type": "material",
+      "category": "wood",
+      "tags": [
+        "wood",
+        "brown"
+      ],
+      "relDir": "materials/Wood/wd_bwn_a8494375",
+      "thumb": "materials/Wood/wd_bwn_a8494375/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-29"
+    },
+    {
+      "id": "2cb0f253986194e584436e1a2df9e86ad25186756fbee144dbe4a19d887716af",
+      "shortId": "2cb0f253",
+      "displayName": "Wood Calligaris Jungle",
+      "slug": "wd_crs_jng",
+      "type": "material",
+      "category": "wood",
+      "tags": [
+        "wood",
+        "calligaris",
+        "jungle"
+      ],
+      "relDir": "materials/Wood/wd_crs_jng_2cb0f253",
+      "thumb": "materials/Wood/wd_crs_jng_2cb0f253/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-22"
+    },
+    {
+      "id": "58878596bd3a40b8b29a128a5a49b092",
+      "shortId": "58878596",
+      "displayName": "wood decorative wall panels",
+      "slug": "wd_dcr_wll_pnl",
+      "type": "material",
+      "category": "wood",
+      "tags": [
+        "wood",
+        "decorative",
+        "wall",
+        "panels"
+      ],
+      "relDir": "materials/Wood/wd_dcr_wll_pnl_58878596",
+      "thumb": "materials/Wood/wd_dcr_wll_pnl_58878596/v001/previews/preview_01_512.png",
+      "latestVersion": "001",
+      "versions": [
+        "001"
+      ],
+      "updated": "2025-08-29"
     }
   ]
 }
